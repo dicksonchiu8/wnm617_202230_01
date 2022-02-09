@@ -1,8 +1,5 @@
-# Dickson Chiu
+# wnm617_202230_01
+WNM 617: Mobile Tech
 
-## Class Project Mobile Tech
-
-## Important Links
-
-- https://www.dchiu.com
-- https://www.dchiu.com/aau/wnm617/chiu.dickson
+## YOU SHOULD NEVER EDIT THIS FILE.
+This one is for the main project.
