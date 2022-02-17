@@ -1,3 +1,303 @@
-#zen-participation h3{
-    color:blue;
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@700&family=Noto+Serif+Display:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    padding: border-box;
 }
+
+header, .preamble, .explanation, .participation, .benefits{
+    height: 100vh;
+}
+
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://64.media.tumblr.com/91b226c04893120506372425344f8c33/tumblr_o5s2pkuq0T1uuzayro1_r1_500.gifv);
+    background-size: cover;
+    background-position: center;
+}
+
+header h1 {
+    font-family: 'Bellota Text', cursive;
+    position: absolute;
+    width: 1140px;
+    top: 30%;
+    left: 50%;
+    color: #fff;
+    font-size: 540%;
+    font-weight: 300;
+    -webkit-transform: translate(-50%, -30%);
+    -ms-transform: translate(-50%, -30%);
+    transform: translate(-50%, -30%);
+}
+
+header h2 {
+    font-family: 'Bellota Text', cursive;
+    position: absolute;
+    width: 1140px;
+    top: 42%;
+    left: 52%;
+    color: #fff;
+    font-size: 240%;
+    font-weight: 300;
+    -webkit-transform: translate(-52%, -42%);
+    -ms-transform: translate(-52%, -42%);
+    transform: translate(-52%, -42%);
+}
+
+.summary{
+    font-family: 'Noto Serif Display', serif;
+    position: absolute;
+    width: 600px;
+    top: 58%;
+    left: 33%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    -webkit-transform: translate(-52%, -42%);
+    -ms-transform: translate(-52%, -42%);
+    transform: translate(-52%, -42%);
+}
+
+.summary p:nth-child(2) {
+  margin-top:40px;
+}
+
+.summary a:link,
+.summary a:visited{
+    padding: 5px 10px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #1abc9c;
+    border: solid 1px #1abc9c;
+    color: #fff;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.summary a:hover,
+.summary a:active {
+    background-color: #20638f;
+}
+
+/*
+.preamble{
+    background-image: url(https://www.seekpng.com/png/detail/844-8442071_purple-flower-clipart-decorative-purple-flower-border-transparent.png);
+    background-size: cover;
+    background-position: center;
+    
+}
+*/
+
+.preamble{
+    margin-bottom:-200px;
+}
+
+.participation{
+    margin-bottom:-100px;
+}
+
+/*Example followed here for CSS lines for before and after text: https://www.w3docs.com/snippets/css/how-to-add-lines-before-and-after-heading-text.html*/
+.preamble h3{
+    font-family: 'Bellota Text', cursive;
+    margin: 100px auto;
+    color: #1abc9c;
+    text-align: center;
+    font-size: 48px;
+    max-width: 1140px;
+    position: relative;
+}
+
+.preamble h3:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1abc9c;
+    left: 17%;
+    top: 50%;
+    position: absolute;
+}
+.preamble h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1abc9c;
+    right: 17%;
+    top: 50%;
+    position: absolute;
+}
+
+.preamble p{
+    font-family: 'Noto Serif Display', serif;
+    width:900px;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.explanation, .benefits {
+    background: #000;
+}
+
+.explanation h3{
+    font-family: 'Bellota Text', cursive;
+    margin: 100px auto;
+    padding-top:100px;
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    max-width: 1140px;
+    position: relative;
+}
+
+.explanation h3:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #fff;
+    left: 17%;
+    top: 80%;
+    position: absolute;
+}
+.explanation h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #fff;
+    right: 17%;
+    top: 80%;
+    position: absolute;
+}
+
+.explanation p{
+    font-family: 'Noto Serif Display', serif;
+    color:#fff;
+    width:900px;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.participation h3{
+    font-family: 'Bellota Text', cursive;
+    margin: 100px auto;
+    color: #1abc9c;
+    text-align: center;
+    font-size: 48px;
+    max-width: 1140px;
+    position: relative;
+}
+
+.participation h3:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1abc9c;
+    left: 17%;
+    top: 50%;
+    position: absolute;
+}
+.participation h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1abc9c;
+    right: 17%;
+    top: 50%;
+    position: absolute;
+}
+
+.participation p{
+    font-family: 'Noto Serif Display', serif;
+    width:900px;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.benefits h3{
+    font-family: 'Bellota Text', cursive;
+    margin: 100px auto;
+    padding-top: 150px;
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+    max-width: 1140px;
+    position: relative;
+}
+
+.benefits h3:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #fff;
+    left: 17%;
+    top: 85%;
+    position: absolute;
+}
+.benefits h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #fff;
+    right: 17%;
+    top: 85%;
+    position: absolute;
+}
+
+.benefits p{
+    font-family: 'Noto Serif Display', serif;
+    width:900px;
+    margin: 0 auto;
+    font-size: 24px;
+    padding-bottom: 100px;
+    color:#fff;
+}
+
+
+.requirements h3{
+    font-family: 'Bellota Text', cursive;
+    margin: 100px auto;
+    color: #1abc9c;
+    text-align: center;
+    font-size: 48px;
+    max-width: 1140px;
+    position: relative;
+}
+
+.requirements h3:before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1abc9c;
+    left: 17%;
+    top: 50%;
+    position: absolute;
+}
+.requirements h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #1abc9c;
+    right: 17%;
+    top: 50%;
+    position: absolute;
+}
+
+.requirements p{
+    font-family: 'Noto Serif Display', serif;
+    width:900px;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
