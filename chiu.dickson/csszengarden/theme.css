@@ -707,15 +707,16 @@ footer a{
 /*Small Phones: from 0 to 500px */
 @media only screen and (max-width: 500px){
     header h1{    
-    left: 120%;        
+    left: 160%;
+    font-size:40px;
     }
     header h2{
-    left:125%;
-    font-size: 160%;
+    left:168%;
+    font-size: 120%;
     }
     .summary{
-    width: 400px;
-    left: 49%;
+    width: 250px;
+    left: 47%;
     font-size: 14px;
     }
     .preamble h3, .explanation h3, .participation h3, .benefits h3, .requirements h3{
@@ -729,59 +730,69 @@ footer a{
     width: 20px;
     height: 1px;
     left: 13%;
+    visibility: hidden;
     }
     .preamble h3:after {
     width: 20px;
     height: 1px;
     right: 13%;
+    visibility: hidden;
     }
     .explanation h3:before {
     width: 20px;
     height: 1px;
     left: 13%;
     top:87%;
+    visibility: hidden;
     }
     .explanation h3:after {
     width: 20px;
     height: 1px;
     right: 13%;
     top:87%;
+    visibility: hidden;
     }
 .participation h3:before {
     width: 20px;
     height: 1px;
     left: 17%;
     top: 50%;
+    visibility: hidden;
 }
 .participation h3:after {
     width: 20px;
     height: 1px;
     right: 17%;
     top: 50%;
+    visibility: hidden;
 }
 .benefits h3:before {
     width: 20px;
     height: 1px;
     left: 17%;
     top: 90%;
+    visibility: hidden;
 }
 .benefits h3:after {
     width: 20px;
     height: 1px;
     right: 17%;
     top: 90%;
+    visibility: hidden;
 }
 .requirements h3:before {
     width: 20px;
     height: 1px;
     left: 17%;
     top: 50%;
+    visibility: hidden;
 }
 .requirements h3:after {
     width: 20px;
     height: 1px;
     right: 17%;
     top: 50%;
+    visibility: hidden;
 }
 footer a{
     margin-right:20px;
