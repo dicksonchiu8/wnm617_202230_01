@@ -443,3 +443,354 @@ footer a:active {
 .zen-resources li a:hover{
     color: #20638f;
 }
+
+@media only screen and (max-width: 1200px){
+    header h1{    
+    left: 70%;
+    font-size: 500%;  
+    }    
+	
+    header h2{
+    left:72%;
+    font-size: 200%;
+    }
+    
+    .summary{
+    width: 600px;
+    left: 48%;
+    font-size: 18px;
+    }
+    
+    .preamble h3:before {
+    width: 40px;
+    height: 3px;
+    left: 18%;
+}
+.preamble h3:after {
+    width: 40px;
+    height: 3px;
+    right: 18%;
+}
+.explanation h3:before {
+    width: 40px;
+    height: 3px;
+    left: 18%;
+}
+.explanation h3:after {
+    width: 40px;
+    height: 3px;
+    right: 18%;
+}
+.participation h3:before {
+    width: 40px;
+    height: 3px;
+    left: 18%;
+}
+.participation h3:after {
+    width: 40px;
+    height: 3px;
+    right: 18%;
+}
+.benefits h3:before {
+    width: 40px;
+    height: 3px;
+    left: 18%;
+    top: 86%;
+}
+.benefits h3:after {
+    width: 40px;
+    height: 3px;
+    right: 18%;
+    top: 86%;
+}
+.requirements h3:before {
+    width: 40px;
+    height: 3px;
+    left: 18%;
+    top: 50%;
+}
+.requirements h3:after {
+    width: 40px;
+    height: 3px;
+    right: 18%;
+    top: 50%;
+}
+.design-selection{
+    clear: both;
+    width:100%;
+    padding-bottom: 20px;
+}
+
+.design-archives, .zen-resources{
+    clear:both;
+    width:100%;
+    padding-bottom: 20px;
+}
+.design-selection h3{
+    padding-left:50px;
+}   
+.design-selection nav {
+    margin-left:50px;
+}
+}
+
+
+/*Big Tablets: from 768 to 1023px */
+@media only screen and (max-width: 1023px){
+    header h1{    
+    left: 80%;
+    font-size: 400%;  
+    }
+    
+    header h2{
+    left:84%;
+    font-size: 180%;
+    }
+
+    .summary{
+    width: 550px;
+    left: 52%;
+    font-size: 16px;
+    }
+    .preamble h3, .explanation h3, .participation h3, .benefits h3, .requirements h3{
+    font-size: 36px;
+    }
+    .preamble p, .explanation p, .participation p, .benefits p, .requirements p{
+    width:500px;
+    font-size: 20px;
+    }
+    .preamble h3:before {
+    width: 30px;
+    height: 3px;
+    left: 23%;
+}
+.preamble h3:after {
+    width: 30px;
+    height: 3px;
+    right: 23%;
+}
+.explanation h3:before {
+    width: 30px;
+    height: 3px;
+    left: 23%;
+    top:86%;
+}
+.explanation h3:after {
+    width: 30px;
+    height: 3px;
+    right: 23%;
+    top:86%;
+}
+.participation h3:before {
+    width: 30px;
+    height: 3px;
+    left: 23%;
+}
+.participation h3:after {
+    width: 30px;
+    height: 3px;
+    right: 23%;
+}
+.benefits h3:before {
+    width: 30px;
+    height: 3px;
+    left: 23%;
+    top: 90%;
+}
+.benefits h3:after {
+    width: 30px;
+    height: 3px;
+    right: 23%;
+    top: 90%;
+}
+.requirements h3:before {
+    width: 30px;
+    height: 3px;
+    left: 23%;
+    top: 50%;
+}
+.requirements h3:after {
+    width: 30px;
+    height: 3px;
+    right: 23%;
+    top: 50%;
+}
+footer a{
+    margin-right:35px;
+}
+}
+
+
+/*Small Tablets: from 500 to 767px */
+@media only screen and (max-width: 767px){
+    header h1{    
+    left: 90%;
+    font-size: 350%;
+    }
+    header h2{
+    left:94%;
+    }
+    .summary{
+    width: 500px;
+    left: 45%;
+    font-size: 16px;
+    }
+    .preamble h3, .explanation h3, .participation h3, .benefits h3, .requirements h3{
+    font-size: 30px;
+    }
+    .preamble p, .explanation p, .participation p, .benefits p, .requirements p{
+    width:400px;
+    font-size: 16px;
+    }
+    .preamble h3:before {
+    width: 20px;
+    height: 2px;
+    left: 15%;
+    }
+.preamble h3:after {
+    width: 20px;
+    height: 2px;
+    right: 15%;
+}
+.explanation h3:before {
+    width: 20px;
+    height: 2px;
+    left: 15%;
+    top:86%;
+}
+.explanation h3:after {
+    width: 20px;
+    height: 2px;
+    right: 15%;
+    top:86%;
+}
+.participation h3:before {
+    width: 20px;
+    height: 2px;
+    left: 15%;
+}
+.participation h3:after {
+    width: 20px;
+    height: 2px;
+    right: 15%;
+}
+.benefits h3:before {
+    width: 20px;
+    height: 2px;
+    left: 17%;
+    top: 90%;
+}
+.benefits h3:after {
+    width: 20px;
+    height: 2px;
+    right: 17%;
+    top: 90%;
+}
+.requirements h3:before {
+    width: 20px;
+    height: 2px;
+    left: 17%;
+    top: 50%;
+}
+.requirements h3:after {
+    width: 20px;
+    height: 2px;
+    right: 17%;
+    top: 50%;
+}
+footer a{
+    margin-right:25px;
+}
+}
+
+
+/*Small Phones: from 0 to 500px */
+@media only screen and (max-width: 500px){
+    header h1{    
+    left: 120%;        
+    }
+    header h2{
+    left:125%;
+    font-size: 160%;
+    }
+    .summary{
+    width: 400px;
+    left: 49%;
+    font-size: 14px;
+    }
+    .preamble h3, .explanation h3, .participation h3, .benefits h3, .requirements h3{
+    font-size: 26px;
+    }
+    .preamble p, .explanation p, .participation p, .benefits p, .requirements p{
+    width:300px;
+    font-size: 16px;
+    }
+    .preamble h3:before {
+    width: 20px;
+    height: 1px;
+    left: 13%;
+    }
+    .preamble h3:after {
+    width: 20px;
+    height: 1px;
+    right: 13%;
+    }
+    .explanation h3:before {
+    width: 20px;
+    height: 1px;
+    left: 13%;
+    top:87%;
+    }
+    .explanation h3:after {
+    width: 20px;
+    height: 1px;
+    right: 13%;
+    top:87%;
+    }
+.participation h3:before {
+    width: 20px;
+    height: 1px;
+    left: 17%;
+    top: 50%;
+}
+.participation h3:after {
+    width: 20px;
+    height: 1px;
+    right: 17%;
+    top: 50%;
+}
+.benefits h3:before {
+    width: 20px;
+    height: 1px;
+    left: 17%;
+    top: 90%;
+}
+.benefits h3:after {
+    width: 20px;
+    height: 1px;
+    right: 17%;
+    top: 90%;
+}
+.requirements h3:before {
+    width: 20px;
+    height: 1px;
+    left: 17%;
+    top: 50%;
+}
+.requirements h3:after {
+    width: 20px;
+    height: 1px;
+    right: 17%;
+    top: 50%;
+}
+footer a{
+    margin-right:20px;
+    font-size: 24px;
+}
+.design-selection li { 
+    width: 25%;
+}
+.zen-resources li {
+    width: 20%;
+}
+}
