@@ -10,3 +10,4 @@
 ## Side Assignments
 - https://dchiu.com/aau/wnm617/chiu.dickson/profile
 - https://dchiu.com/aau/wnm617/chiu.dickson/csszengarden
+- https://dchiu.com/aau/wnm617/chiu.dickson/explorations/Chiu_m03_Explorations.pdf
