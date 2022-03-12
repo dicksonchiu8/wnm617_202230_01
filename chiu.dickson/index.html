@@ -65,11 +65,13 @@
                     <input type="password" placeholder="Password" id="signup-password" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">            
-                    <!--<a href="#home-page" class="submit-button">Sign Up</a>-->
+                    <!--<a href="#home-page" class="submit-button">Sign Up Link</a>-->
                     <!--<input type="submit" class="submit-button" value="Sign Up!" data-role="none">-->
-                    <button class="submit-button" type="submit" data-role="none">Sign Up</button>
+                    <button class="submit-button" type="button" data-role="none">Sign Up Button</button>
                 </div>
-                <a href="#login-page">Back to Login</a>
+                <div class="form-control">
+                    <a href="#login-page" class="back-to-login">Back to Login</a>
+                </div>
             </form>
         </div>
     </section>
@@ -78,30 +80,98 @@
         <header data-role="header">
             <h1>Dog Watch List</h1>
             <ul>
-                <li><a href="#login-page">Logout</a></li>
+                <li><a href="#login-page" class="js-logout">Logout</a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#user-profile-page">Profile</a></li>
             </ul>
         </header>
         <div data-role="main" class="overscroll">
-            <ul>
-                <li><a href="#dog-profile-page">Animal 01</a></li>
-                <li><a href="#dog-profile-page">Animal 02</a></li>
-                <li><a href="#dog-profile-page">Animal 03</a></li>
-                <li><a href="#dog-profile-page">Animal 04</a></li>
-                <li><a href="#dog-profile-page">Animal 05</a></li>
-                <li><a href="#dog-profile-page">Animal 06</a></li>
-                <li><a href="#dog-profile-page">Animal 07</a></li>
-                <li><a href="#dog-profile-page">Animal 08</a></li>
-                <li><a href="#dog-profile-page">Animal 09</a></li>
-
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 01</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 02</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 03</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 04</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 05</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 06</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 07</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 08</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 09</h2>
+                    </a>
+                </li>  
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 10</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 11</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 12</h2>
+                    </a>
+                </li> 
+                <li>
+                    <a href="#dog-profile-page">
+                        <img src="lib/images/dog-face.jpeg">
+                        <h2>Animal 13</h2>
+                    </a>
+                </li>                 
             </ul>
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#add-dog-page">Add a Dog</a></li>
-                <li><a href="#map-page">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section>
@@ -114,12 +184,14 @@
         <div data-role="main" class="overscroll">
             <form id="add-dog-form" class="form">
                 <div class="form-control">
-                    <label for="signup-fullname">Name of Dog</label>
+                    <label for="signup-fullname"><h5>Name of Dog</h5></label>
                     <input type="text" placeholder="Type the Name" id="dog-fullname" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">
-                    <label for="dog-breed">Dog Breed</label>
-                    <select name="dog-breed" id="dog-breed-select">
+                    <label for="dog-breed"><h5>Dog Breed</h5></label>
+                    <div class="edit-dog-breed-select">
+                    <div class="select">
+                    <select name="dog-breed" id="dog-breed-select" data-role="none">
                         <option value="0" disabled selected>Select a dog breed</option>
                         <option value="1">Affenpinscher</option>
                         <option value="2">Afghan Hound</option>
@@ -294,16 +366,18 @@
                         <option value="171">Xoloitzcuintli</option>
                         <option value="172">Yorkshire Terrier</option>                   
                     </select>
+                    </div>
+                    </div>
                 </div>
                 <div class="form-control">
-                    Take Photo
-                    <label for="file" class="take-photo">Snap a pic
+                    <h5>Take Photo</h5>
+                    <label for="file" class="take-photo">
                         <input type="file" accept="image/*;capture=camera">
                     </label>  
                 </div>
                 <div class="form-control">
-                    <label for="dog-description">Description</label>
-                    <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="3" id="dog-description" data-role="none" class="form-input"></textarea>
+                    <label for="dog-description"><h5>Description</h5></label>
+                    <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="3" id="dog-description" data-role="none" class="form-textarea"></textarea>
                 </div>                
                 <div class="form-control">            
                     <a href="#add-dog-location-page" class="form-button">Save</a>
@@ -312,41 +386,47 @@
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#">Add a Dog</a></li>
-                <li><a href="#map-page">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section>
     
     <section data-role="page" id="add-dog-location-page">
         <header data-role="header">
-            <h1>Add Dog's Location</h1>
+            <h1>Pick Dog's Location</h1>
             <ul>
                 <li><a href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#home-page">Save</a></li>
             </ul>
         </header>        
-        <div data-role="main">
-            Pick a location
+        <div data-role="main" class="map-container">
         </div>
     </section>
     <section data-role="page" id="map-page">
-        <div data-role="main">
-            map
-            <p><a href="#add-location-page">Add a Location</a></p>
-            <select name="map-filters" id="map-filter-select">
+        <div data-role="main" class="map-container">
+            <div class="map-filter-select">
+            <div class="select">
+            <select name="map-filters" id="map-filter-select" data-role="none">
                 <option value="0" disabled selected>Filter Map Pins</option>
                 <option value="1">Most Recent</option>
                 <option value="2">Wanda</option>
             </select>
+            </div>
+            </div>
+            <!--<a href="#add-location-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-location" data-iconpos="notext">Add a Location</a>-->
+            <!--<a href="#" data-role="button" data-icon="add-location" data-iconpos="notext" data-theme="a" data-inline="true">Bars</a>-->
+            <div class="add-location-button-wrapper">
+                <a href="#add-location-page"><img src="lib/images/add-icon-loc-2.png"></a>
+            </div>
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#add-dog-page">Add a Dog</a></li>
-                <li><a href="#">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section>
@@ -355,28 +435,30 @@
         <header data-role="header">
             <h1>Animal Profile Page</h1>
             <ul>
-                <li><a href="#home-page">Back to List</a></li>
+                <li><a href="#home-page">Back</a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#edit-dog-page">Edit</a></li>
             </ul>
         </header>
         <div data-role="main" class="animal-presentation overscroll">
                 <div class="form-control">
-                    <label for="file" class="take-photo">Dog Profile Pic
-                    </label>  
+                    <div class="img-container">
+                        <img src="lib/images/wanda.jpeg"/>
+                    </div>
                      <h4>Name:</h4><span>Wanda</span><br>
                      <h4>Breed:</h4><span>French Bulldog</span>
                      <h4>Description:</h4><span>Wanda is 25 pounds and 1 year old.</span>
                      <h4>Recent Locations:</h4>
-                     <label for="file" class="take-photo">Map
-                    </label> 
+                    <div class="img-container">
+                        <img src="lib/images/map-image-2.png"/>
+                    </div>
                 </div>
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#add-dog-page">Add a Dog</a></li>
-                <li><a href="#map-page">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section> 
@@ -394,12 +476,14 @@
         <div data-role="main" class="overscroll">
             <form id="edit-dog-form" class="form">
                 <div class="form-control">
-                    <label for="dog-fullname">Name of Dog</label>
+                    <label for="dog-fullname"><h5>Dog's Name</h5></label>
                     <input type="text" value="Wanda" placeholder="Type the Name" id="edit-dog-fullname" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">
-                    <label for="dog-breed">Dog Breed</label>
-                    <select name="dog-breed" id="edit-dog-breed-select">
+                    <label for="dog-breed"><h5>Dog Breed</h5></label>
+                    <div class="edit-dog-breed-select">
+                        <div class="select">
+                        <select name="dog-breed" id="edit-dog-breed-select" data-role="none">
                         <option value="1">Affenpinscher</option>
                         <option value="2">Afghan Hound</option>
                         <option value="3">African Hunting Dog</option>
@@ -572,17 +656,20 @@
                         <option value="170">Wirehaired Vizsla</option>
                         <option value="171">Xoloitzcuintli</option>
                         <option value="172">Yorkshire Terrier</option>                   
-                    </select>
+                    </select>                            
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="form-control">
-                    Change Photo
-                    <label for="file" class="take-photo">Snap a pic
+                    <h5>Change Photo</h5>
+                    <label for="file" class="take-photo">
                         <input type="file" accept="image/*;capture=camera">
                     </label>  
                 </div>
                 <div class="form-control">
-                    <label for="edit-dog-description">Description</label>
-                    <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="3" id="edit-dog-description" data-role="none" class="form-input">Wanda is 25 pounds and 1 year old.</textarea>
+                    <label for="edit-dog-description"><h5>Description</h5></label>
+                    <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="3" id="edit-dog-description" data-role="none" class="form-textarea">Wanda is 25 pounds and 1 year old.</textarea>
                 </div>                
                 <div class="form-control">            
                     <a href="#dog-profile-page" class="form-button">Save</a>
@@ -591,9 +678,9 @@
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#">Add a Dog</a></li>
-                <li><a href="#map-page">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section>  
@@ -602,28 +689,30 @@
         <header data-role="header">
             <h1>User Profile Page</h1>
             <ul>
-                <li><a href="#home-page">Back to List</a></li>
+                <li><a href="#home-page">Back</a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#edit-user-page">Edit</a></li>
             </ul>
         </header>
         <div data-role="main" class="user-presentation overscroll">
                 <div class="form-control">
-                    <label for="file" class="take-photo">Profile Pic
-                    </label>  
+                    <div class="img-container">
+                        <img src="lib/images/profile.jpg"/>
+                    </div> 
                      <h4>Name:</h4><span>Dickson Chiu</span><br>
                      <h4>Age:</h4><span>30</span>
                      <h4>About:</h4><span>I have a french bulldog named Wanda.</span>
                      <h4>Recent Pins:</h4>
-                     <label for="file" class="take-photo">Map
-                    </label> 
+                    <div class="img-container">
+                        <img src="lib/images/map-image-2.png"/>
+                    </div>
                 </div>
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#add-dog-page">Add a Dog</a></li>
-                <li><a href="#map-page">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section>  
@@ -641,16 +730,18 @@
         <div data-role="main" class="overscroll">
             <form id="edit-user-form" class="form">
                 <div class="form-control">
-                    <label for="user-fullname">Your Full Name</label>
+                    <label for="user-fullname"><h5>Your Full Name</h5></label>
                     <input type="text" value="Dickson Chiu" placeholder="Type the Name" id="user-fullname" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">
-                    <label for="user-profile-password">Password</label>
+                    <label for="user-profile-password"><h5>Password</h5></label>
                     <input type="password" value="testtest" placeholder="Password" id="user-profile-password" data-role="none" class="form-input">
                 </div>                
                 <div class="form-control">
-                    <label for="user-age-select">Age</label>
-                    <select name="user-age" id="user-age-select">
+                    <label for="user-age-select"><h5>Age</h5></label>
+                    <div class="user-age-select">
+                    <div class="select">    
+                    <select name="user-age" id="user-age-select" data-role="none">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -680,7 +771,7 @@
                         <option value="27">27</option>
                         <option value="28">28</option>
                         <option value="29">29</option>
-                        <option value="30">30</option>
+                        <option value="30" selected>30</option>
                         <option value="31">31</option>
                         <option value="32">32</option>
                         <option value="33">33</option>
@@ -753,16 +844,18 @@
                         <option value="100">100</option>
                         <option value="101">101</option>
                     </select>
+                    </div>
+                    </div>
                 </div>
                 <div class="form-control">
-                    Change Photo
-                    <label for="file" class="take-photo">Snap a pic
+                    <h5>Change Photo</h5>
+                    <label for="file" class="take-photo">
                         <input type="file" accept="image/*;capture=camera">
                     </label>  
                 </div>
                 <div class="form-control">
-                    <label for="user-about">Description</label>
-                    <textarea name="user-about" placeholder="Describe the Dog..." cols="40" rows="3" id="user-about" data-role="none" class="form-input">I have a french bulldog named Wanda</textarea>
+                    <label for="user-about"><h5>Description</h5></label>
+                    <textarea name="user-about" placeholder="Describe the Dog..." cols="40" rows="3" id="user-about" data-role="none" class="form-textarea">I have a french bulldog named Wanda</textarea>
                 </div>                
                 <div class="form-control">            
                     <a href="#dog-profile-page" class="form-button">Save</a>
@@ -771,9 +864,9 @@
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#">Add a Dog</a></li>
-                <li><a href="#map-page">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section>    
@@ -789,24 +882,31 @@
         </header>
         <div data-role="main" class="add-location">
                 <div class="form-control">  
-                    <h1>Add a Location to:</h1>
+                    <h2>Add a Location to:</h2>
                     <a href="#add-dog-page" class="form-button">A New Dog</a>
                 </div>
+                <br>
                 <div class="form-control">  
-                    <h1>Or an existing one:</h1>
-                    <select name="map-filters" id="map-filter-select">
+                    <h2>Or an existing one:</h2>
+                    <div class="existing-dog-select">
+                    <div class="select">
+                    <select name="existing-dogs" id="existing-dog-select" data-role="none">
                         <option value="0" selected>Wanda</option>
                         <option value="1">Gemma</option>
                         <option value="2">Hazel</option>
                     </select>
-                    <a href="#add-dog-location-page" class="form-button">Add Location to Existing</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="form-control">
+                    <a href="#add-dog-location-page" class="form-button">Add Location to Existing</a>                        
                 </div>
         </div>    
         <footer data-role="footer">
             <ul>
-                <li><a href="#home-page">Home</a></li>
-                <li><a href="#add-dog-page">Add a Dog</a></li>
-                <li><a href="#map-page">Map</a></li>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
     </section>    
