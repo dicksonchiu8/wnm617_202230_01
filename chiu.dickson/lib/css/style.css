@@ -27,22 +27,17 @@ body{
     font-family: 'Nunito', sans-serif;
 }
 
-h1,
-h2 {
-    font-size: 2em;
+h1,h2,h3,h4,h5{
     font-family: chalkboard;
-}
-h3 {
-    font-size: 1.75em;
-    font-family: chalkboard;
-    margin: 15px 0 0 0;
+    margin: 15px 0 0 0;    
 }
 
-h4 {
-    font-size: 1.5em;
-    font-family: chalkboard;
-    margin: 15px 0 0 0;
-}
+h1,
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+
 
 a {
     color: inherit;
@@ -73,23 +68,46 @@ a:hover {
     text-decoration: none;
 }  
 
-.form-button{
+.form-textarea{
     display: inline-block;
-    width: 100%;
-    border-width: 0;
-    background-color: #f4f4f4;
+    width:100%;
+    background-color: #fcfcfc;
     font: inherit;
     padding: 0.5em 1em;
     margin: 0;
     outline: 0;
+    border: 1px solid #185193;
+    border-radius: 4px;    
+}
+
+.form-button{
+    display: inline-block;
+    width: 100%;
+    border-width: 0;
+    background-color: #185193;
+    border-radius: 10px;
+    font: inherit;
+    padding: 1em;
+    margin: 0;
+    outline: 0;
     text-align: center;
     text-decoration: none;
+    color: #fff;
+}
+
+.form-button:hover,
+.form-button:active{
+    background-color: #113967;
 }  
 
+.back-to-login{
+    position:relative;
+    left:35%;
+}
 input[type=text], input[type=password] {
   width: 100%;
   padding: 20px;
-  margin: 8px 0;
+  margin: 1px 0;
   display: inline-block;
   border: 1px solid #185193;
   border-radius: 4px;
@@ -103,7 +121,8 @@ input[type=text], input[type=password] {
 
 .submit-button{
     font-family: 'Nunito', sans-serif;
-    font-size:16px;    
+    font-size:16px;
+    font-weight:300;
     display: inline-block;
     width: 100%;
     background-color: #fff;
@@ -204,6 +223,10 @@ button:active{
 .form-control span { margin-left: 70px; }
 */
 
+.map-container{
+    background: url("../images/google-map.png");
+    z-index:-100;
+}
 
 input[type="file"]{
     width:100%;
@@ -215,13 +238,32 @@ input[type="file"]{
     cursor:pointer;
 }
 .take-photo{
+    border: 1px solid #185193;
+    border-radius: 4px;
     position:relative;
-    background:#ccc;
-    border:1px solid #000;
-    padding:100px;
-    color:#fff;
-    text-align:center;
-    font-family: 'Nunito', sans-serif;
+    background-color: #fff;
+    background: url("../images/camera-2.png") no-repeat center;
+    background-size: 60%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.img-container{
+    height:300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #a0a0a0;
+}
+
+.img-container img{
+    max-width: 100%;
+    max-height: 100%;
+      margin: auto;
+  display: block;
 }
 
 .ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
@@ -245,14 +287,17 @@ input[type="file"]{
     overflow: hidden;
     position: relative;
 }
-
+.ui-header{ 
+    background-color:#185193;
+    color: #fff;
+    
+}
 .ui-header,
 .ui-footer {
     flex: none;
-    height: 3rem;
-    line-height: 3rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
     border-width: 0;
-    background-color: white;
     box-shadow: 0 0 5px rgba(0,0,0,0.15);
     position: relative;
     overflow: hidden;
@@ -261,10 +306,11 @@ input[type="file"]{
     margin: 0;
     padding: 0;
     position: absolute;
-    top:0;
+    top:-3px;
     left:0;
     width: 100%;
     text-align: center;
+    font-size:1.50em;
 }
 
 .ui-header ul,
@@ -284,6 +330,103 @@ input[type="file"]{
 .ui-footer a {
     display: block;
     padding: 0 1em;
+    text-decoration: none;
+}
+
+.ui-footer .ui-btn{
+    font-size:10px;
+}
+
+.ui-icon-home:after {
+	background: url("../images/home-icon-3.png") no-repeat;
+	background-position: 50% 0%;
+	background-size: 22px;
+}
+.ui-btn-icon-top:after{
+    top:0.55em;
+}
+.ui-icon-add-dog:after {
+	background: url("../images/add-icon-2.png") no-repeat;
+	background-position: 50% 0%;
+	background-size: 22px;
+}
+.ui-btn-add-dog:after{
+    top:0.55em;
+}
+.ui-icon-map:after {
+	background: url("../images/map-icon-2.png") no-repeat;
+	background-position: 50% 0%;
+	background-size: 22px;
+}
+.ui-btn-map:after{
+    top:0.55em;
+}
+
+/*
+.ui-icon-add-location:after {
+	background: url("../images/add-icon-loc.png") no-repeat;
+	background-size: 50px 50px
+}
+*/
+.ui-footer .ui-btn-icon-top{
+    padding-top:0.7525em;
+}
+
+.add-location-button-wrapper{
+    position:absolute;
+    right:10px;
+    bottom:20px;
+    width:100%;
+}
+.add-location-button-wrapper img{
+    float:right;
+    width: 60px;
+}
+
+.ui-listview .ui-li-has-thumb>.ui-btn>img:first-child{
+    max-height: 4em;
+    max-width: 4em;
+}
+/* DROPDOWNS */
+
+
+/*Dropdown styling example: https://wisdmlabs.com/blog/customize-drop-down-list-using-css/*/
+.edit-dog-breed-select, 
+.user-age-select,
+.map-filter-select,
+.existing-dog-select{
+  font-size: 13px;
+  padding: 20px 8px 20px 14px;
+  background: #fff;
+  border: 1px solid #185193;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.edit-dog-breed-select .select,
+.user-age-select .select,
+.map-filter-select .select,
+.existing-dog-select .select{
+  width: 120%;
+  background:url('../images/keyboard-down-arrow-2.png') no-repeat;
+  background-position:80% center;
+}
+
+.edit-dog-breed-select .select select,
+.user-age-select .select select,
+.map-filter-select .select select,
+.existing-dog-select .select select{
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 120%;
+  position: relative;
+  z-index: 10;
+  font-size: 1.25em;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Layout Classes */
