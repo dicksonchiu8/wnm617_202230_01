@@ -16,6 +16,7 @@
 }
 */
 
+/*Chalkboard font downloaded here: https://fontsisland.com/font/chalkboard-se*/
 @font-face {
     font-family: chalkboard;
     src: url(fonts/chalkboard-se-regular.ttf);
@@ -104,6 +105,8 @@ a:hover {
     position:relative;
     left:35%;
 }
+
+/*Followed styling examples - https://www.w3schools.com/css/tryit.asp?filename=trycss_forms*/
 input[type=text], input[type=password] {
   width: 100%;
   padding: 20px;
@@ -114,11 +117,6 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
   background-color: #fff;
 }
-/*
-.submit-button:link,
-.submit-button:visited
-*/
-
 .submit-button{
     font-family: 'Nunito', sans-serif;
     font-size:16px;
@@ -135,7 +133,6 @@ input[type=text], input[type=password] {
     text-align: center;
     text-decoration: none;
 }
-
 .submit-button:hover,
 .submit-button:active{
   background-color: #185193;
@@ -143,53 +140,6 @@ input[type=text], input[type=password] {
   text-decoration:none;
 }
 
-/*
-input[type=submit]{
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  color: #185193;
-  padding: 25px;
-  margin: 8px 0;
-  border: solid 1px #185193;
-  border-radius: 40px;
-  cursor: pointer;
-  text-align: center;
-text-decoration: none;
-}
-
-input[type=submit]:hover,
-input[type=submit]:active{
-  background-color: #185193;
-  color: #fff;
-  text-decoration:none;
-}
-*/
-
-/*
-button{
-    font-family: 'Nunito', sans-serif;
-    font-size:14px;
-    display: inline-block;
-    width: 100%;
-    background-color: #fff;
-    color: #185193;
-    padding: 25px;
-    margin: 8px 0;
-    border: solid 1px #185193;
-    border-radius: 40px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;    
-}
-
-button:hover,
-button:active{
-  background-color: #185193;
-  color: #fff;
-  text-decoration:none;
-}
-*/
 
 .logo-img{
     width: 100%;
@@ -262,8 +212,8 @@ input[type="file"]{
 .img-container img{
     max-width: 100%;
     max-height: 100%;
-      margin: auto;
-  display: block;
+    margin: auto;
+    display: block;
 }
 
 .ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
@@ -337,6 +287,7 @@ input[type="file"]{
     font-size:10px;
 }
 
+/*Followed code example to add custom icons to footer links - http://andymatthews.net/read/creating-and-using-custom-icons-in-jquery-mobile/#:~:text=jQuery%20Mobile%20uses%20white%20PNG,but%20any%20image%20is%20acceptable.*/
 .ui-icon-home:after {
 	background: url("../images/home-icon-3.png") no-repeat;
 	background-position: 50% 0%;
@@ -362,12 +313,6 @@ input[type="file"]{
     top:0.55em;
 }
 
-/*
-.ui-icon-add-location:after {
-	background: url("../images/add-icon-loc.png") no-repeat;
-	background-size: 50px 50px
-}
-*/
 .ui-footer .ui-btn-icon-top{
     padding-top:0.7525em;
 }
@@ -383,6 +328,7 @@ input[type="file"]{
     width: 60px;
 }
 
+/*Followed thumbnail example for a listview: https://demos.jquerymobile.com/1.4.3/listview/#&ui-state=dialog*/
 .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child{
     max-height: 4em;
     max-width: 4em;
