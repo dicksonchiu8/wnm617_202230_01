@@ -28,6 +28,10 @@ body{
     font-family: 'Nunito', sans-serif;
 }
 
+.signup-header {
+    text-align:center;
+}
+
 h1,h2,h3,h4,h5{
     font-family: chalkboard;
     margin: 15px 0 0 0;    
@@ -104,6 +108,23 @@ a:hover {
 .back-to-login{
     position:relative;
     left:35%;
+}
+.ui-input-search {
+    border:none;
+}
+
+/*Modifying search inputs - https://stackoverflow.com/questions/53271870/css-how-to-change-input-font-size*/
+.ui-input-search input{
+    font-family: 'Nunito', sans-serif;
+    min-height: 3em;
+    font-size:15px;
+    padding-left:4em;
+    background: url("../images/search-icon.png") no-repeat;
+	background-position: 16px 50%;
+	background-size: 25px;
+    -moz-appearance: none;/* older firefox */
+    -webkit-appearance: none; /* safari, chrome, edge and ie mobile */
+    appearance: none; /* rest */
 }
 
 /*Followed styling examples - https://www.w3schools.com/css/tryit.asp?filename=trycss_forms*/
@@ -339,6 +360,7 @@ input[type="file"]{
 /*Dropdown styling example: https://wisdmlabs.com/blog/customize-drop-down-list-using-css/*/
 .edit-dog-breed-select, 
 .user-age-select,
+.signup-user-age-select,
 .map-filter-select,
 .existing-dog-select{
   font-size: 13px;
@@ -350,7 +372,15 @@ input[type="file"]{
   position: relative;
 }
 
+.map-filter-select{
+    width:90%;
+    border-radius: 50px;
+    top:20px;
+    margin-left: auto;
+    margin-right: auto 
+}
 .edit-dog-breed-select .select,
+.signup-user-age-select .select,
 .user-age-select .select,
 .map-filter-select .select,
 .existing-dog-select .select{
@@ -360,6 +390,7 @@ input[type="file"]{
 }
 
 .edit-dog-breed-select .select select,
+.signup-user-age-select .select select,
 .user-age-select .select select,
 .map-filter-select .select select,
 .existing-dog-select .select select{
@@ -373,6 +404,10 @@ input[type="file"]{
   z-index: 10;
   font-size: 1.25em;
   font-family: 'Nunito', sans-serif;
+}
+
+.dog-list a{
+    text-decoration: none;    
 }
 
 /* Layout Classes */
