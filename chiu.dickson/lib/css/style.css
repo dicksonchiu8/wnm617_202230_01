@@ -308,7 +308,25 @@ input[type="file"]{
     font-size:10px;
 }
 
+.active-footer-link{ 
+  border-top: 1px solid #185193;
+}
+
 /*Followed code example to add custom icons to footer links - http://andymatthews.net/read/creating-and-using-custom-icons-in-jquery-mobile/#:~:text=jQuery%20Mobile%20uses%20white%20PNG,but%20any%20image%20is%20acceptable.*/
+.ui-footer .ui-icon-home-active,
+.ui-footer .ui-icon-add-dog-active
+{
+    color: #185193;
+}
+.ui-icon-home-active:after {
+	background: url("../images/home-active-icon.png") no-repeat;
+	background-position: 50% 0%;
+	background-size: 22px;
+}
+.ui-btn-home-active:after{
+    top:0.55em;
+}
+
 .ui-icon-home:after {
 	background: url("../images/home-icon-3.png") no-repeat;
 	background-position: 50% 0%;
@@ -325,12 +343,29 @@ input[type="file"]{
 .ui-btn-add-dog:after{
     top:0.55em;
 }
+.ui-icon-add-dog-active:after {
+	background: url("../images/add-active-icon.png") no-repeat;
+	background-position: 50% 0%;
+	background-size: 22px;
+}
+.ui-btn-add-dog-active:after{
+    top:0.55em;
+}
+
 .ui-icon-map:after {
 	background: url("../images/map-icon-2.png") no-repeat;
 	background-position: 50% 0%;
 	background-size: 22px;
 }
 .ui-btn-map:after{
+    top:0.55em;
+}
+.ui-icon-map-active:after {
+	background: url("../images/map-active-icon.png") no-repeat;
+	background-position: 50% 0%;
+	background-size: 22px;
+}
+.ui-btn-map-active:after{
     top:0.55em;
 }
 
