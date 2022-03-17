@@ -90,7 +90,7 @@
         -->
         
         <div data-role="main">
-            <h1 class="signup-header">Additional Information</h1>
+            <h3 class="signup-header">Additional Information</h3>
             <form id="signup-form" class="form" data-ajax="false">
                 <div class="form-control">
                     <label for="signup-fullname">Your Name</label>
@@ -231,7 +231,8 @@
             <ul>
                 <li><a href="#user-profile-page">Profile</a></li>               
                 <li class="flex-stretch"></li>
-                <li><a href="#login-page" class="js-logout">Logout</a></li>
+                <li><a href="#settings-page">Settings</a></li>
+                <!--<li><a href="#login-page" class="js-logout">Logout</a></li>-->
             </ul>
         </header>
         <div data-role="main" class="overscroll">
@@ -324,7 +325,55 @@
             </ul>
         </footer>
     </section>
-    <!--HOME PAGE (ANIMAL LIST PAGE) -->
+    <!--END HOME PAGE (ANIMAL LIST PAGE) -->
+    
+    <!-- SETTINGS PAGE -->    
+    <section data-role="page" id="settings-page">
+        <header data-role="header">
+            <h1>Settings</h1>
+            <ul>
+                <li><a href="#home-page">Back</a></li>               
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <form class="form settings">
+                <div class="form-control">
+                    <a href="#edit-user-page" class="settings-link" data-role="none">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <img src="lib/images/profile-icon.jpg">    
+                        </div>
+                        <div class="card-text">
+                            <h3>Edit your Profile</h3>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="form-control">
+                    <a href="#login-page" class="settings-link js-logout" data-role="none">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <img src="lib/images/logout-icon.png">
+                        </div>
+                        <div class="card-text">
+                            <h3>Logout</h3>
+                        </div>                        
+                    </div>
+                    </a>
+                </div>
+            </form>  
+        </div>    
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
+            </ul>
+        </footer>
+    </section>    
+    <!-- END SETTINGS PAGE -->       
+    
     
     <!--ADD DOG PAGE-->    
     <section data-role="page" id="add-dog-page">
@@ -586,7 +635,7 @@
     <!--END ADD DOG LOCATION PAGE--> 
     
     <!--DOG PROFILE PAGE-->
- <section data-role="page" id="dog-profile-page">
+    <section data-role="page" id="dog-profile-page">
         <header data-role="header">
             <h1>Animal Profile Page</h1>
             <ul>

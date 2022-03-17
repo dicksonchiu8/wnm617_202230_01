@@ -144,8 +144,8 @@ input[type=text], input[type=password] {
     font-weight:300;
     display: inline-block;
     width: 100%;
-    background-color: #fff;
-    color: #185193;
+    background-color: #185193;
+    color: #fff;
     padding: 25px;
     margin: 8px 0;
     border: solid 1px #185193;
@@ -156,7 +156,7 @@ input[type=text], input[type=password] {
 }
 .submit-button:hover,
 .submit-button:active{
-  background-color: #185193;
+  background-color: #134176;
   color: #fff;
   text-decoration:none;
 }
@@ -443,6 +443,42 @@ input[type="file"]{
 
 .dog-list a{
     text-decoration: none;    
+}
+
+.card div{
+    display: inline-block;
+}
+
+.card{
+    border: 1px solid #000000;
+    width:90%;
+    min-height: 6em;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-sizing: border-box;    
+}
+.card-img-container{
+    width:20%;
+    margin-right:10px;
+}
+
+/*Important note: https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container*/
+.card-img-container img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.card-text{
+    width:70%;
+    position:relative;
+    top:-22px;
+    text-align: center;
+}
+.settings{
+    padding-top:20px;
+}
+.settings-link{
+    text-decoration: none;
 }
 
 /* Layout Classes */
