@@ -309,7 +309,7 @@ input[type="file"]{
 }
 
 .active-footer-link{ 
-  border-top: 1px solid #185193;
+  border-top: 2px solid #185193;
 }
 
 /*Followed code example to add custom icons to footer links - http://andymatthews.net/read/creating-and-using-custom-icons-in-jquery-mobile/#:~:text=jQuery%20Mobile%20uses%20white%20PNG,but%20any%20image%20is%20acceptable.*/
