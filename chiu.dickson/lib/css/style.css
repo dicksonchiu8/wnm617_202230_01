@@ -149,7 +149,7 @@ input[type=text], input[type=password] {
     padding: 25px;
     margin: 8px 0;
     border: solid 1px #185193;
-    border-radius: 40px;
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -157,6 +157,29 @@ input[type=text], input[type=password] {
 .submit-button:hover,
 .submit-button:active{
   background-color: #134176;
+  color: #fff;
+  text-decoration:none;
+}
+
+.signup-button{
+    font-family: 'Nunito', sans-serif;
+    font-size:16px;
+    font-weight:300;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    color: #185193;
+    padding: 20px;
+    margin: 8px 0;
+    border: solid 1px #185193;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.signup-button:hover,
+.signup-button:active{
+  background-color: #185193;
   color: #fff;
   text-decoration:none;
 }
