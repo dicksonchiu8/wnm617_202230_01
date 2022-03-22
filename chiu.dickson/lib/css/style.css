@@ -304,6 +304,19 @@ input[type="file"]{
     text-decoration: none;
 }
 
+.header-profile-pic{
+    width:auto;
+    height:40px;
+    margin-top:10px;
+    /*padding: 6px 5px 10px 0;*/
+}
+
+.settings-profile-pic{
+    width:auto;
+    height:19px;
+    margin-top: 18px;
+}
+
 .ui-footer .ui-btn{
     font-size:10px;
 }
