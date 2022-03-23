@@ -2,7 +2,7 @@ const checkLoginForm = () => {
    //let user = $("#signup-username").val();
    //let pass = $("#signup-password").val();
    let user = $("#login-username").val();
-   let pass = $("#login-password").val();
+   let pass = $("#login-password").val();   
 
    console.log(user,pass)
 
@@ -14,7 +14,19 @@ const checkLoginForm = () => {
    } else {
       // not logged in
       console.log('failure');
+      
+      // show error message
+      $("#error-message").addClass("visible");
+      $("#error-message").removeClass("hidden");
+      
       sessionStorage.removeItem('userId');
+      
+      // remove error message after some time
+      setTimeout(function() {
+        $("#error-message").addClass("hidden");
+        $("#error-message").removeClass("visible");
+      }, 4000); 
+     
    }
 
    checkUserId();
