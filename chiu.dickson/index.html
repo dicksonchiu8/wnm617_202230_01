@@ -28,7 +28,7 @@
                 <div class="form-control logo-container">
                     <img class="logo-img" src="lib/images/logo.png"/>
                 </div>
-                <br><br>
+                <div id="error-message" class="hidden">Wrong username and/or password.</div>
                 <div class="form-control">
                     <input type="text" placeholder="Username" id="login-username" data-role="none" class="form-input">
                 </div>
@@ -73,7 +73,7 @@
                     <input type="password" placeholder="Pick a Password" id="signup-password" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">            
-                    <a href="#signup-page-part2" class="submit-button">Sign Up Button</a>
+                    <a href="#signup-page-part2" class="submit-button">Get Started!</a>
                     <!--<input type="submit" class="submit-button" value="Sign Up!" data-role="none">-->
                     <!--<button class="submit-button" type="button" data-role="none">Sign Up Button</button>-->
                 </div>
@@ -95,7 +95,7 @@
         
         <div data-role="main">
             <h3 class="signup-header">Additional Information</h3>
-            <form id="signup-form" class="form" data-ajax="false">
+            <form id="signup-form2" class="form" data-ajax="false">
                 <div class="form-control">
                     <label for="signup-fullname">Your Name</label>
                     <input type="text" placeholder="Your full name" id="signup-fullname" data-role="none" class="form-input">
@@ -379,6 +379,7 @@
                 </div>
             </form>  
         </div>    
+        <!--
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -386,6 +387,7 @@
                 <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
+        -->
     </section>    
     <!-- END SETTINGS PAGE -->       
     
@@ -394,7 +396,10 @@
     <section data-role="page" id="add-dog-page">
         <header data-role="header">
             <h1>Add a Dog</h1>
-            <a href="#" data-rel="back">Cancel</a>
+            <ul>
+                <li><a href="#home-page">Cancel</a></li>               
+                <li class="flex-stretch"></li>
+            </ul>            
         </header>  
         <div data-role="main" class="overscroll">
             <form id="add-dog-form" class="form">
@@ -598,7 +603,8 @@
                     <a href="#add-dog-location-page" class="form-button">Save</a>
                 </div>
             </form>
-        </div>    
+        </div>
+        <!--
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -606,6 +612,7 @@
                 <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
+        -->
     </section>
     <!--END ADD DOG PAGE-->    
 
@@ -638,7 +645,7 @@
             <div class="add-location-button-wrapper">
                 <a href="#add-location-page"><img src="lib/images/add-icon-loc-2.png"></a>
             </div>
-        </div>    
+        </div>
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -672,7 +679,8 @@
                         <img src="lib/images/map-image-2.png"/>
                     </div>
                 </div>
-        </div>    
+        </div>  
+        <!--
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -680,6 +688,7 @@
                 <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
+        -->
     </section> 
     <!--END DOG PROFILE PAGE-->    
 
@@ -690,7 +699,7 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#">Delete</a></li>
+                <li><a href="#dog-profile-page">Save</a></li>
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
@@ -890,12 +899,14 @@
                 <div class="form-control">
                     <label for="edit-dog-description"><h5>Description</h5></label>
                     <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="3" id="edit-dog-description" data-role="none" class="form-textarea">Wanda is 25 pounds and 1 year old.</textarea>
-                </div>                
+                </div>  
+                <!--
                 <div class="form-control">            
                     <a href="#dog-profile-page" class="form-button">Save</a>
-                </div>
+                </div>-->
             </form>
         </div>    
+        <!--
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -903,6 +914,7 @@
                 <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
+        -->
     </section>  
     <!--END EDIT DOG PROFILE PAGE-->
     
@@ -929,7 +941,8 @@
                         <img src="lib/images/map-image-2.png"/>
                     </div>
                 </div>
-        </div>    
+        </div>  
+        <!--
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -937,6 +950,7 @@
                 <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
+        -->
     </section>  
     <!--END USER PROFILE PAGE-->    
     
@@ -1084,7 +1098,8 @@
                     <a href="#dog-profile-page" class="form-button">Save</a>
                 </div>
             </form>
-        </div>    
+        </div> 
+        <!--
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -1092,6 +1107,7 @@
                 <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
+        -->
     </section>    
     <!--EDIT USER PROFILE PAGE-->    
 
@@ -1127,6 +1143,7 @@
                     <a href="#add-dog-location-page" class="form-button">Add Location to Existing</a>                        
                 </div>
         </div>    
+        <!--
         <footer data-role="footer">
             <ul>
                 <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
@@ -1134,6 +1151,7 @@
                 <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
             </ul>
         </footer>
+        -->
     </section>   
     <!--END ADD LOCATION PAGE-->    
 
