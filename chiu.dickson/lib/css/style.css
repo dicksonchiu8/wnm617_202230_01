@@ -229,8 +229,11 @@ input[type=text], input[type=password] {
     padding: 2em;
 }
 
-.animal-presentation, .user-presentation, .add-location{
+.add-location{
     padding: 1em;
+}
+.animal-presentation, .user-presentation{
+    padding: 1em 1em 0 1em;
 }
 
 .login-form-text{
