@@ -234,7 +234,7 @@
             <h1>Dog Watch List</h1>
             <ul>
                 <li>
-                    <a href="#user-profile-page">
+                    <a href="#user-profile-page-recent">
                         <!--Profile-->
                         <!--<img src="lib/images/profile.jpg" class="header-profile-pic">-->
                         <img src="lib/images/profile_icon.png" class="header-profile-pic">
@@ -253,61 +253,61 @@
         <div data-role="main" class="overscroll">
             <ul data-role="listview" data-filter="true" data-filter-placeholder="Search your dogs..." data-inset="true" class="dog-list">
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/wanda.jpeg">
                         <h2>Wanda &ensp;&#8211;&ensp; French Bulldog</h2><!--Reminder for html spacing: https://www.geeksforgeeks.org/how-to-insert-spaces-tabs-in-text-using-html-css/-->
                         </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/gemma.jpeg">
                         <h2>Gemma &ensp;&#8211;&ensp; Golden Doodle</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/pitbull.jpeg">
                         <h2>Hazel &ensp;&#8211;&ensp; Pitbull</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/dachshund.jpeg">
                         <h2>Charlie &ensp;&#8211;&ensp; Dachshund</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/golden.jpeg">
                         <h2>Harper &ensp;&#8211;&ensp; Golden Retriever</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/corgi.jpeg">
                         <h2>Halo &ensp;&#8211;&ensp; Pembroke Welsh Corgi</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/yorkie.jpeg">
                         <h2>Gizmo &ensp;&#8211;&ensp; Yorkshire Terrier</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/alaskan.jpeg">
                         <h2>Koda &ensp;&#8211;&ensp; Alaskan Malamute</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/saintbernard.jpeg">
                         <h2>Sally &ensp;&#8211;&ensp; Saint Bernard</h2>
                     </a>
                 </li>  
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/chihuahua.jpeg">
                         <h2>Taco &ensp;&#8211;&ensp; Chihuahua</h2>
                     </a>
@@ -319,13 +319,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/bloodhound.jpeg">
                         <h2>Beau &ensp;&#8211;&ensp; Bloodhound</h2>
                     </a>
                 </li> 
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-recent">
                         <img src="lib/images/chowchow.jpeg">
                         <h2>PoPo &ensp;&#8211;&ensp; Chow Chow</h2>
                     </a>
@@ -655,9 +655,31 @@
         </footer>
     </section>
     <!--END ADD DOG LOCATION PAGE--> 
+
+    <!--DOG PROFILE PAGE - Recent Locations-->
+    <section data-role="page" id="dog-profile-page-recent">
+        <header data-role="header">
+            <h1>Dog Profile Page</h1>
+            <ul>
+                <li><a href="#home-page">Back</a></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <div data-role="main" class="profile-map-container">
+        </div>
+        <footer data-role="footer" class="ui-profile-footer">
+            <ul>
+                <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">Recent Locations</span></a></li>
+                <li><a class="test" href="#dog-profile-page-info" data-role="button"><span class="profile-footer-link">Dog Info</span></a></li>
+            </ul>
+        </footer>        
+    </section> 
+    <!--END DOG PROFILE PAGE - Recent Locations-->  
+
+
     
-    <!--DOG PROFILE PAGE-->
-    <section data-role="page" id="dog-profile-page">
+    <!--DOG PROFILE PAGE - Dog Info-->
+    <section data-role="page" id="dog-profile-page-info">
         <header data-role="header">
             <h1>Animal Profile Page</h1>
             <ul>
@@ -674,23 +696,17 @@
                      <h4>Name:</h4><span>Wanda</span><br>
                      <h4>Breed:</h4><span>French Bulldog</span>
                      <h4>Description:</h4><span>Wanda is 25 pounds and 1 year old.</span>
-                     <h4>Recent Locations:</h4>
                 </div>
-                <div class="img-container">
-                    <img src="lib/images/map-image-2.png"/>
-                </div>                
-        </div>  
-        <!--
-        <footer data-role="footer">
+        </div>
+        <footer data-role="footer" class="ui-profile-footer">
             <ul>
-                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
-                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
-                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
+                <li><a class="test" href="#dog-profile-page-recent" data-role="button"><span class="profile-footer-link">Recent Locations</span></a></li>
+                <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">Dog Info</span></a></li>
             </ul>
-        </footer>
-        -->
+        </footer>                
+        </div>
     </section> 
-    <!--END DOG PROFILE PAGE-->    
+    <!--END DOG PROFILE PAGE - Dog Info-->    
 
     <!--EDIT DOG PROFILE PAGE-->    
     <section data-role="page" id="edit-dog-page">
@@ -699,7 +715,7 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#dog-profile-page">Save</a></li>
+                <li><a href="#dog-profile-page-info">Save</a></li>
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
@@ -918,8 +934,28 @@
     </section>  
     <!--END EDIT DOG PROFILE PAGE-->
     
-    <!--USER PROFILE PAGE-->    
-    <section data-role="page" id="user-profile-page">
+    <!--USER PROFILE PAGE - RECENT PINS-->    
+    <section data-role="page" id="user-profile-page-recent">
+        <header data-role="header">
+            <h1>User Profile Page</h1>
+            <ul>
+                <li><a href="#home-page">Back</a></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <div data-role="main" class="profile-map-container">
+        </div> 
+        <footer data-role="footer" class="ui-profile-footer">
+            <ul>
+                <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">Recent Pins</span></a></li>
+                <li><a class="test" href="#user-profile-page-info" data-role="button"><span class="profile-footer-link">User Info</span></a></li>
+            </ul>
+        </footer>        
+    </section>  
+    <!--END USER PROFILE PAGE - RECENT PINS -->
+    
+    <!--USER PROFILE PAGE - User Info-->    
+    <section data-role="page" id="user-profile-page-info">
         <header data-role="header">
             <h1>User Profile Page</h1>
             <ul>
@@ -935,24 +971,17 @@
                     </div> 
                      <h4>Name:</h4><span>Dickson Chiu</span><br>
                      <h4>Age:</h4><span>30</span>
-                     <h4>About:</h4><span>I have a french bulldog named Wanda.</span>
-                     <h4>Recent Pins:</h4>
+                     <h4>About:</h4><span>I have a french bulldog named Wanda. She is incredibly sweet and wonderful to be around. I've had her for a little more than a year</span>
                 </div>
-                <div class="img-container">
-                    <img src="lib/images/map-image-2.png"/>
-                </div>                
-        </div>  
-        <!--
-        <footer data-role="footer">
+        </div> 
+        <footer data-role="footer" class="ui-profile-footer">
             <ul>
-                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
-                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
-                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
+                <li><a class="test" href="#user-profile-page-recent" data-role="button"><span class="profile-footer-link">Recent Pins</span></a></li>
+                <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">User Info</span></a></li>
             </ul>
-        </footer>
-        -->
+        </footer>        
     </section>  
-    <!--END USER PROFILE PAGE-->    
+    <!--END USER PROFILE PAGE - User Info -->    
     
     <!--EDIT USER PROFILE PAGE-->    
  <section data-role="page" id="edit-user-page">
@@ -961,7 +990,7 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#">Delete</a></li>
+                <li><a href="#user-profile-page-info">Save</a></li>
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
@@ -1093,9 +1122,6 @@
                 <div class="form-control">
                     <label for="user-about"><h5>Description</h5></label>
                     <textarea name="user-about" placeholder="Describe the Dog..." cols="40" rows="3" id="user-about" data-role="none" class="form-textarea">I have a french bulldog named Wanda</textarea>
-                </div>                
-                <div class="form-control">            
-                    <a href="#dog-profile-page" class="form-button">Save</a>
                 </div>
             </form>
         </div> 

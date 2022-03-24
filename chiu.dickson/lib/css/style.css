@@ -250,6 +250,11 @@ input[type=text], input[type=password] {
     z-index:-100;
 }
 
+.profile-map-container{
+    background: url("../images/google-map-profile.png");
+    z-index:-100;
+}
+
 input[type="file"]{
     width:100%;
     height:100%;
@@ -368,6 +373,14 @@ input[type="file"]{
 
 .ui-footer .ui-btn{
     font-size:10px;
+}
+
+.profile-footer-link-active{
+    color: #185193;
+    border-top: 2px solid #185193;
+}
+.profile-footer-link{
+    font-size:14px;
 }
 
 .active-footer-link{ 
