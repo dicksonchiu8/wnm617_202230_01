@@ -16,4 +16,6 @@ $(() => {
       sessionStorage.removeItem("userId");
       checkUserId();
    })
+   
+   $(".test").css({ 'margin' : '0' });
 });
