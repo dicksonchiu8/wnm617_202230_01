@@ -78,7 +78,7 @@
                     <!--<button class="submit-button" type="button" data-role="none">Sign Up Button</button>-->
                 </div>
                 <div class="form-control">
-                <a href="#login-page" class="signup-button">Back to Login</a></p>
+                <a href="#login-page" class="signup-button">Back to Login</a>
                 </div>
             </form>
         </div>
@@ -93,7 +93,7 @@
         </header>   
         -->
         
-        <div data-role="main">
+        <div data-role="main"  class="overscroll">
             <h3 class="signup-header">Additional Information</h3>
             <form id="signup-form2" class="form" data-ajax="false">
                 <div class="form-control">
@@ -213,7 +213,7 @@
                 </div>
                 <div class="form-control">
                     <label for="signup-user-description">About Me</label>
-                    <textarea name="signup-user-desc" placeholder="Tell me about yourself..." cols="40" rows="5" id="signup-user-description" data-role="none" class="form-textarea"></textarea>
+                    <textarea name="signup-user-desc" placeholder="Do you own any dogs?..." cols="40" rows="4" id="signup-user-description" data-role="none" class="form-textarea"></textarea>
                 </div> 
                 <div class="form-control">            
                     <a href="#home-page" class="submit-button">Finish Up!</a>
@@ -259,73 +259,73 @@
                         </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/gemma.jpeg">
                         <h2>Gemma &ensp;&#8211;&ensp; Golden Doodle</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/pitbull.jpeg">
                         <h2>Hazel &ensp;&#8211;&ensp; Pitbull</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/dachshund.jpeg">
                         <h2>Charlie &ensp;&#8211;&ensp; Dachshund</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/golden.jpeg">
                         <h2>Harper &ensp;&#8211;&ensp; Golden Retriever</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/corgi.jpeg">
                         <h2>Halo &ensp;&#8211;&ensp; Pembroke Welsh Corgi</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/yorkie.jpeg">
                         <h2>Gizmo &ensp;&#8211;&ensp; Yorkshire Terrier</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/alaskan.jpeg">
                         <h2>Koda &ensp;&#8211;&ensp; Alaskan Malamute</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/saintbernard.jpeg">
                         <h2>Sally &ensp;&#8211;&ensp; Saint Bernard</h2>
                     </a>
                 </li>  
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/chihuahua.jpeg">
                         <h2>Taco &ensp;&#8211;&ensp; Chihuahua</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/frenchpoodle.jpeg">
                         <h2>Fifi &ensp;&#8211;&ensp; French Poodle</h2>
                     </a>
                 </li>
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/bloodhound.jpeg">
                         <h2>Beau &ensp;&#8211;&ensp; Bloodhound</h2>
                     </a>
                 </li> 
                 <li>
-                    <a href="#dog-profile-page-recent">
+                    <a href="#dog-profile-page-info">
                         <img src="lib/images/chowchow.jpeg">
                         <h2>PoPo &ensp;&#8211;&ensp; Chow Chow</h2>
                     </a>
@@ -480,6 +480,7 @@
                         <option value="65">Cocker Spaniel</option>
                         <option value="66">Cocker Spaniel (American)</option>
                         <option value="67">Coton de Tulear</option>
+                        <option value="68a">Dachshund</option>
                         <option value="68">Dalmatian</option>
                         <option value="69">Doberman Pinscher</option>
                         <option value="70">Dogo Argentino</option>
@@ -669,8 +670,8 @@
         </div>
         <footer data-role="footer" class="ui-profile-footer">
             <ul>
+                <li><a class="test" href="#dog-profile-page-info" data-role="button"><span class="profile-footer-link">Dog Info</span></a></li>                
                 <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">Recent Locations</span></a></li>
-                <li><a class="test" href="#dog-profile-page-info" data-role="button"><span class="profile-footer-link">Dog Info</span></a></li>
             </ul>
         </footer>        
     </section> 
@@ -681,7 +682,7 @@
     <!--DOG PROFILE PAGE - Dog Info-->
     <section data-role="page" id="dog-profile-page-info">
         <header data-role="header">
-            <h1>Animal Profile Page</h1>
+            <h1>Wanda's Profile Page</h1>
             <ul>
                 <li><a href="#home-page">Back</a></li>
                 <li class="flex-stretch"></li>
@@ -693,15 +694,14 @@
                     <div class="img-container">
                         <img src="lib/images/wanda.jpeg"/>
                     </div>
-                     <h4>Name:</h4><span>Wanda</span><br>
                      <h4>Breed:</h4><span>French Bulldog</span>
                      <h4>Description:</h4><span>Wanda is 25 pounds and 1 year old.</span>
                 </div>
         </div>
         <footer data-role="footer" class="ui-profile-footer">
             <ul>
-                <li><a class="test" href="#dog-profile-page-recent" data-role="button"><span class="profile-footer-link">Recent Locations</span></a></li>
                 <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">Dog Info</span></a></li>
+                <li><a class="test" href="#dog-profile-page-recent" data-role="button"><span class="profile-footer-link">Recent Locations</span></a></li>
             </ul>
         </footer>                
         </div>
@@ -796,6 +796,7 @@
                         <option value="65">Cocker Spaniel</option>
                         <option value="66">Cocker Spaniel (American)</option>
                         <option value="67">Coton de Tulear</option>
+                        <option value="68a">Dachshund</option>    
                         <option value="68">Dalmatian</option>
                         <option value="69">Doberman Pinscher</option>
                         <option value="70">Dogo Argentino</option>
