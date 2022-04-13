@@ -9,7 +9,7 @@ const HomePage = async() => {
 }
 
 const UserProfilePage = async() => {
-    let users = await query({
+    let {result:users} = await query({
         type:'user_by_id',
         params:[sessionStorage.userId]
     })
@@ -17,7 +17,37 @@ const UserProfilePage = async() => {
     let [user] = users;
     
     console.log(user.result);
-    $("").html(makeAnimalList(user.result)); 
+    $("#user-profile-page-info [data-role='main']").html(makeUserProfilePage(user));
+    $("#user-profile-page-info h1").html(user.name.substring(0, user.name.indexOf(' '))+"'s Profile");
+    
+}
+
+const UserProfilePageRecent = async() => {
+    let {result:users} = await query({
+        type:'user_by_id',
+        params:[sessionStorage.userId]
+    })
+    
+    let [user] = users;
+    
+    console.log(user.result);
+    $("#user-profile-page-recent h1").html(user.name.substring(0, user.name.indexOf(' '))+"'s Profile");
+    
+}
+
+const EditUserPage = async() => {
+    let {result:users} = await query({
+        type:'user_by_id',
+        params:[sessionStorage.userId]
+    })
+    
+    let [user] = users;
+    
+    console.log(user.result);
+    //$("#edit-user-page [data-role='main']").html(makeEditUserPage(user));
+    $("#user-fullname").val(user.name);
+    userAgeDropdown(user.age);
+    $("#user-about").text(user.description)
     
 }
 
@@ -36,11 +66,6 @@ const AnimalProfilePage = async() => {
     
     
 }
-
-const EditUserPage = async() => {
-    
-}
-
 
 const EditDogPage = async() => {
     
