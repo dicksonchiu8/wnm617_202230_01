@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="lib/css/style.css">
     
     <script src="lib/js/jquery-2.2.4.min.js"></script>
-    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
     <script src="lib/js/app.js"></script>
     <script src="lib/js/signin.js"></script>
+    <script src="lib/js/pages.js"></script>   
+    <script src="lib/js/functions.js"></script>    
+    <script src="lib/js/parts.js"></script>     
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
 <body>
@@ -234,7 +237,7 @@
             <h1>Dog Watch List</h1>
             <ul>
                 <li>
-                    <a href="#user-profile-page-recent">
+                    <a href="#user-profile-page-info">
                         <!--Profile-->
                         <!--<img src="lib/images/profile.jpg" class="header-profile-pic">-->
                         <img src="lib/images/profile_icon.png" class="header-profile-pic">
@@ -948,8 +951,8 @@
         </div> 
         <footer data-role="footer" class="ui-profile-footer">
             <ul>
+                <li><a class="test" href="#user-profile-page-info" data-role="button"><span class="profile-footer-link">User Info</span></a></li>                
                 <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">Recent Pins</span></a></li>
-                <li><a class="test" href="#user-profile-page-info" data-role="button"><span class="profile-footer-link">User Info</span></a></li>
             </ul>
         </footer>        
     </section>  
@@ -977,8 +980,9 @@
         </div> 
         <footer data-role="footer" class="ui-profile-footer">
             <ul>
+                <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">User Info</span></a></li>                
                 <li><a class="test" href="#user-profile-page-recent" data-role="button"><span class="profile-footer-link">Recent Pins</span></a></li>
-                <li class="profile-footer-link-active"><a class="test" href="#" data-role="button"><span class="profile-footer-link">User Info</span></a></li>
+
             </ul>
         </footer>        
     </section>  
