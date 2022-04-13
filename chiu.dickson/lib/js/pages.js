@@ -9,28 +9,31 @@ const HomePage = async() => {
 }
 
 const UserProfilePage = async() => {
-    let user = await query({
+    let users = await query({
         type:'user_by_id',
         params:[sessionStorage.userId]
     })
     
-    //let [user] = users;
+    let [user] = users;
     
-    console.log(user);
+    console.log(user.result);
     $("").html(makeAnimalList(user.result)); 
     
 }
 
 const AnimalProfilePage = async() => {
-    let animal = await query({
+    let animals = await query({
         type:'dog_by_id',
         params:[sessionStorage.animalId]
     })
-    //let [animal] = animals;
+    let [animal] = animals;
     
     console.log(animal);
     
-    $("").html(makeAnimalList(user.result)); 
+    $("").html(makeAnimalList(animal.result)); 
+    //Also call dropdown function in parts.js
+    //dogBreedDropdown(animal.breed)
+    
     
 }
 
