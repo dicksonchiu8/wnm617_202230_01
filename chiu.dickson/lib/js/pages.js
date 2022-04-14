@@ -51,8 +51,8 @@ const EditUserPage = async() => {
     
 }
 
-const AnimalProfilePage = async() => {
-    let animals = await query({
+const DogProfilePage = async() => {
+    let {result:animals} = await query({
         type:'dog_by_id',
         params:[sessionStorage.animalId]
     })
@@ -60,7 +60,23 @@ const AnimalProfilePage = async() => {
     
     console.log(animal);
     
-    $("").html(makeAnimalList(animal.result)); 
+    $("#dog-profile-page-info [data-role='main']").html(makeDogProfilePage(animal));
+    $("#dog-profile-page-info h1").html(animal.name+"'s Profile");
+    //Also call dropdown function in parts.js
+    //dogBreedDropdown(animal.breed)
+    
+    
+}
+const DogProfilePageRecent = async() => {
+    let {result:animals} = await query({
+        type:'dog_by_id',
+        params:[sessionStorage.animalId]
+    })
+    let [animal] = animals;
+    
+    console.log(animal);
+    
+    $("#dog-profile-page-recent h1").html(animal.name+"'s Profile");
     //Also call dropdown function in parts.js
     //dogBreedDropdown(animal.breed)
     
@@ -68,7 +84,17 @@ const AnimalProfilePage = async() => {
 }
 
 const EditDogPage = async() => {
+
+    let {result:animals} = await query({
+        type:'dog_by_id',
+        params:[sessionStorage.animalId]
+    })
+    let [animal] = animals;
     
+    console.log(animal);
+    $("#edit-dog-fullname").val(animal.name);
+    dogBreedDropdown(animal.breed);
+    $("#edit-dog-description").text(animal.description)    
 }
 
 
