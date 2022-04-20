@@ -1,10 +1,19 @@
+const RecentPage = async() => {
+    let {result} = await query({
+        type:'recent_animal_locations',
+        params:[sessionStorage.userId]
+    });
+    
+    //console.log(animals);
+}
+
 const HomePage = async() => {
     let animals = await query({
         type:'dogs_by_user_id',
         params:[sessionStorage.userId]
     })
     
-    console.log(animals);
+    //console.log(animals);
     $("#home-page .dog-list").html(makeAnimalList(animals.result));
 }
 
@@ -32,6 +41,25 @@ const UserProfilePageRecent = async() => {
     
     console.log(user.result);
     $("#user-profile-page-recent h1").html(user.name.substring(0, user.name.indexOf(' '))+"'s Profile");
+    
+}
+
+const UserProfilePageRecentPins = async() => {
+    
+    await checkData(()=>window.google);
+    console.log(window.google)
+    let {result} = await query({
+        type:'recent_animal_locations',
+        params:[sessionStorage.userId]
+    });
+    //console.log(result);    
+    let valid_animals = result.reduce((r,o)=>{
+       o.icon = o.img 
+    });
+    
+    let map_el = await makeMap("#user-profile-page-recent .map");
+    console.log(map_el.data())
+    makeMarkers(map_el, result);
     
 }
 
@@ -80,8 +108,18 @@ const DogProfilePageRecent = async() => {
     //Also call dropdown function in parts.js
     //dogBreedDropdown(animal.breed)
     
+   let {result:locations} = await query({
+      type:'locations_by_animal_id',
+      params:[sessionStorage.animalId]
+   })
+   console.log(locations)
+
+   let map_el = await makeMap("#dog-profile-page-recent .map");
+   makeMarkers(map_el,locations);
     
 }
+
+
 
 const EditDogPage = async() => {
 
