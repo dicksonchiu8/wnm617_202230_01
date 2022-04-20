@@ -251,8 +251,14 @@ input[type=text], input[type=password] {
 }
 
 .profile-map-container{
-    background: url("../images/google-map-profile.png");
+    /*background: url("../images/google-map-profile.png");*/
     z-index:-100;
+}
+
+#user-profile-page-recent .map,
+#dog-profile-page-recent .map{
+    width:100%;
+    height:100%;
 }
 
 input[type="file"]{
