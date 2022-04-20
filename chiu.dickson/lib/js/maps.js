@@ -6,7 +6,7 @@ const makeMap = async (target, center={ lat: 40.518884, lng: -111.950963 }) => {
     if(!map_el.data("map")) map_el.data({
         "map": new google.maps.Map(map_el[0], {
           center,
-          zoom: 12,
+          zoom: 14,
           disableDefaultUI: true,
        })        
     });
@@ -27,7 +27,7 @@ const makeMarkers = (map_el, map_locs=[]) => {
          position: l,
          map,
          icon: {
-            url: l.icon,
+            url: l.icon + '#custom_marker',
             scaledSize: {
                width:40,
                height:40,
