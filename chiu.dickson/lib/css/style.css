@@ -263,8 +263,9 @@ input[type=text], input[type=password] {
 
 /*https://stackoverflow.com/questions/46416883/how-add-circle-shape-in-google-maps-custom-icon*/
 img[src$="#custom_marker"]{
-    border: 2px solid #185193 !important;
+    border: 3px solid #185193 !important;
     border-radius:50%;
+    
 }
 
 
@@ -273,14 +274,14 @@ img[src$="#custom_marker"]{
 div[title]::after{
   content: '';
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: calc(50% - 10px);
-  background: #000000;
+  background: #185193;
   width: 20px;
-  height: 20px;
+  height: 13px;
   
   /* The points are: (left top: x y, right top: x y, center bottom: x y) */
-  /*clip-path: polygon(0 0, 100% 0, 50% 100%);*/
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
 /*
