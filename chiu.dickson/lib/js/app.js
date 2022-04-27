@@ -30,6 +30,20 @@ $(() => {
         checkLoginForm();
     })
     
+    // CLICK FORM SUBMISSION
+    .on("click", ".js-submit-dog-add", function(){
+        submitAnimalAdd();
+    })
+    
+    .on("click", ".js-submit-dog-edit", function(){
+        submitAnimalEdit();
+    })
+    
+    .on("click", ".js-submit-user-edit", function(){
+        submitUserEdit();
+    })
+    
+    
     // CLICKS
     .on("click", ".js-logout", function() {
       sessionStorage.removeItem("userId");
