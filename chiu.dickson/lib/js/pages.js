@@ -55,13 +55,34 @@ const UserProfilePageRecentPins = async() => {
     //console.log(result);    
     let valid_animals = result.reduce((r,o)=>{
        o.icon = o.img 
-    });
+       if(o.lat && o.lng) r.push(o);
+       return r;
+    },[]);
     
     let map_el = await makeMap("#user-profile-page-recent .map");
     console.log(map_el.data())
-    makeMarkers(map_el, result);
+    makeMarkers(map_el, valid_animals);
     
+    map_el.data("markers").forEach((m,i)=>{
+        console.log(m)
+        m.addListener("click", function(e){
+            console.log(valid_animals[i]);
+            
+            //Just Navigate to Profile Page
+            //sessionStorage.animalId = valid_animals[i].animal_id;
+            //$.mobile.navigate("#animal-profile-page");
+            
+            // Open Google InfoWindow
+             map_el.data("infoWindow")
+                .open(map_el.data("map"),m);
+             map_el.data("infoWindow")
+                .setContent('<a href="#" class="js-animal-jump noclick-children" data-id='+valid_animals[i].animal_id+'">'+valid_animals[i].name+'</a>');
+            
+        })
+    })
+
 }
+
 
 const EditUserPage = async() => {
     let {result:users} = await query({
