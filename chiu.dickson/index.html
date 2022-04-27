@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&26display=swap">
-    <link rel="stylesheet" href="lib/css/style.css">
+    
     
     <script src="lib/js/jquery-2.2.4.min.js"></script>
     
@@ -19,11 +19,13 @@
     <script src="lib/js/pages.js"></script>   
     <script src="lib/js/functions.js"></script>    
     <script src="lib/js/parts.js"></script>     
+    <script src="lib/js/forms.js"></script>
     <script src="lib/js/maps.js"></script>    
     
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC51tAodsin9oyoS5pCrfuFdjllz4eEMjQ" defer></script>
 
+    <link rel="stylesheet" href="lib/css/style.css">
 </head>
 
 <body>
@@ -407,6 +409,7 @@
             <ul>
                 <li><a href="#home-page">Cancel</a></li>               
                 <li class="flex-stretch"></li>
+                <li><a href="#" class="js-submit-dog-add">Save</a></li> 
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
@@ -608,9 +611,9 @@
                     <label for="dog-description"><h5>Description</h5></label>
                     <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="3" id="dog-description" data-role="none" class="form-textarea"></textarea>
                 </div>                
-                <div class="form-control">            
-                    <a href="#add-dog-location-page" class="form-button">Save</a>
-                </div>
+                <!--<div class="form-control">-->          
+                    <!--<a href="#add-dog-location-page" class="form-button">Save</a>-->
+                <!--</div>-->
             </form>
         </div>
         <!--
@@ -693,7 +696,7 @@
         <header data-role="header">
             <h1></h1>
             <ul>
-                <li><a href="#home-page">Back</a></li>
+                <li><a href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#edit-dog-page">Edit</a></li>
             </ul>
@@ -716,7 +719,7 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#dog-profile-page-info">Save</a></li>
+                <li><a href="#dog-profile-page-info" class="js-submit-dog-edit">Save</a></li>
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
@@ -769,7 +772,7 @@
         <header data-role="header">
             <h1></h1>
             <ul>
-                <li><a href="#home-page">Back</a></li>
+                <li><a href="#user-profile-page-info">Back</a></li>
                 <li class="flex-stretch"></li>
             </ul>
         </header>
@@ -813,7 +816,7 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#user-profile-page-info">Save</a></li>
+                <li><a href="#user-profile-page-info" class="js-submit-user-edit">Save</a></li>
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
