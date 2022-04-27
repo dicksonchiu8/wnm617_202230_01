@@ -76,7 +76,7 @@ const UserProfilePageRecentPins = async() => {
              map_el.data("infoWindow")
                 .open(map_el.data("map"),m);
              map_el.data("infoWindow")
-                .setContent('<a href="#" class="js-animal-jump noclick-children" data-id='+valid_animals[i].animal_id+'">'+valid_animals[i].name+'</a>');
+                .setContent('<a href="#" id="marker_profile_link" class="js-animal-jump noclick-children" data-id='+valid_animals[i].animal_id+'">'+valid_animals[i].name+'</a>');
             
         })
     })

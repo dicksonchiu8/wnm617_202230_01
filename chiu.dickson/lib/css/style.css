@@ -630,4 +630,4 @@ input[type="file"]{
 .flex-column { flex-direction:column; }
 .overscroll { overflow: auto; }
 .noclick-children * { pointer-events:none; }
-.js-animal-jump{color:#185193;}
+#marker_profile_link{color:#185193;}
