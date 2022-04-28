@@ -409,11 +409,13 @@
             <ul>
                 <li><a href="#home-page">Cancel</a></li>               
                 <li class="flex-stretch"></li>
-                <li><a href="#add-dog-location-page" class="js-submit-dog-add">Save</a></li> 
+                <!--<li><a href="#add-dog-location-page" class="js-submit-dog-add">Save</a></li> -->
+                <li><a href="#" class="js-submit-dog-add">Save</a></li> 
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
             <form id="add-dog-form" class="form">
+                <div id="add-dog-error-message" class="no-display"></div>
                 <div class="form-control">
                     <label for="signup-fullname"><h5>Name of Dog</h5></label>
                     <input type="text" placeholder="Type the Name" id="dog-fullname" data-role="none" class="form-input">
