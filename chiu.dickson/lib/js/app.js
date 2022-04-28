@@ -45,6 +45,10 @@ $(() => {
         submitUserEdit();
     })
     
+    .on("click", ".js-submit-password", function(){
+        submitPassword();
+    })
+    
     
     // CLICKS
     .on("click", ".js-logout", function() {
