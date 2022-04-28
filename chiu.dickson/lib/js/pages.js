@@ -47,7 +47,7 @@ const UserProfilePageRecent = async() => {
 const UserProfilePageRecentPins = async() => {
     
     await checkData(()=>window.google);
-    console.log(window.google)
+    //console.log(window.google)
     let {result} = await query({
         type:'recent_animal_locations',
         params:[sessionStorage.userId]
@@ -140,8 +140,6 @@ const DogProfilePageRecent = async() => {
     
 }
 
-
-
 const EditDogPage = async() => {
 
     let {result:animals} = await query({
@@ -154,6 +152,16 @@ const EditDogPage = async() => {
     $("#edit-dog-fullname").val(animal.name);
     dogBreedDropdown(animal.breed);
     $("#edit-dog-description").text(animal.description)    
+}
+
+const AddDogLocation = async() => {
+    let map_el = await makeMap("#add-dog-location-page .map-container");
+}
+
+const MapPage = async() => {
+    let map_el = await makeMap("#map-page .map-container");
+    $("#map-page .map-container").css("position","");
+
 }
 
 
