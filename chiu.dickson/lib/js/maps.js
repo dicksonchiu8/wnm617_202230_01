@@ -8,6 +8,7 @@ const makeMap = async (target, center={ lat: 40.518884, lng: -111.950963 }) => {
           center,
           zoom: 14,
           disableDefaultUI: true,
+          styles: mapStyles,
        }),
       "infoWindow": new google.maps.InfoWindow({content:''}),        
     });
@@ -80,21 +81,76 @@ const setMapBounds = (map_el, map_locs) => {
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const mapStyles =[];
+const mapStyles = 
+[
+    {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#e0efef"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "hue": "#1900ff"
+            },
+            {
+                "color": "#c0e8e8"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 100
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": 700
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#7dcdcd"
+            }
+        ]
+    }
+]
 
