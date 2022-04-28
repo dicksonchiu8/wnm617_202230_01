@@ -93,8 +93,46 @@ const submitUserAdd = () => {
 const submitUserEdit = () => {
     let name = $("#user-fullname").val();
     let age = $("#user-age-select :selected").text();
+    age = parseInt(age, 10);
     let description = $("#user-about").val();
-   
+
+
+   //FORM VALIDATION
+    if(name.length < 1 && age === 0){
+        $("#edit-user-error-message").html("Your Name can't be Empty.<br>Age can't be 0.");
+          $("#edit-user-error-message").addClass("visible");
+          $("#edit-user-error-message").removeClass("no-display");
+         
+          // remove error message after some time
+          setTimeout(function() {
+            $("#edit-user-error-message").addClass("no-display");
+            $("#edit-user-error-message").removeClass("visible");
+          }, 4000);         
+    } else if(name.length < 1 ){
+        $("#edit-user-error-message").html("Your Name can't be Empty.");
+          $("#edit-user-error-message").addClass("visible");
+          $("#edit-user-error-message").removeClass("no-display");
+         
+          // remove error message after some time
+          setTimeout(function() {
+            $("#edit-user-error-message").addClass("no-display");
+            $("#edit-user-error-message").removeClass("visible");
+          }, 4000);           
+    } else if(age === 0){
+        $("#edit-user-error-message").html("Age can't be 0.");
+          $("#edit-user-error-message").addClass("visible");
+          $("#edit-user-error-message").removeClass("no-display");
+         
+          // remove error message after some time
+          setTimeout(function() {
+            $("#edit-user-error-message").addClass("no-display");
+            $("#edit-user-error-message").removeClass("visible");
+          }, 4000);           
+    } else{
+        console.log({name,age,description});
+        //sessionStorage.animalId = $(this).data('id');
+        $.mobile.navigate("#user-profile-page-info")
+    }    
     console.log({name,age,description});
 }
 
