@@ -723,11 +723,13 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#dog-profile-page-info" class="js-submit-dog-edit">Save</a></li>
+                <!--<li><a href="#dog-profile-page-info" class="js-submit-dog-edit">Save</a></li>-->
+                <li><a href="#" class="js-submit-dog-edit">Save</a></li>                
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
             <form id="edit-dog-form" class="form">
+                <div id="edit-dog-error-message" class="no-display"></div>                     
                 <div class="form-control">
                     <label for="dog-fullname"><h5>Dog's Name</h5></label>
                     <input type="text" placeholder="Type the Name" id="edit-dog-fullname" data-role="none" class="form-input">
