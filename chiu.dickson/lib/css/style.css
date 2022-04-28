@@ -245,14 +245,16 @@ input[type=text], input[type=password] {
 .form-control span { margin-left: 70px; }
 */
 
-.map-container{
-    background: url("../images/google-map.png");
-    z-index:-100;
+#map-page .map-container{
+    /*background: url("../images/google-map.png");
+    z-index:-100;*/
+    position: static !important; 
+   
 }
 
 .profile-map-container{
-    /*background: url("../images/google-map-profile.png");*/
-    z-index:-100;
+    /*background: url("../images/google-map-profile.png");
+    z-index:-100;*/
 }
 
 #user-profile-page-recent .map,
@@ -546,7 +548,8 @@ input[type="file"]{
     border-radius: 50px;
     top:20px;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto;
+    z-index: 1000;
 }
 .edit-dog-breed-select .select,
 .signup-user-age-select .select,
