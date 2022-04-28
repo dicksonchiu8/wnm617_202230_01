@@ -17,6 +17,8 @@ $(() => {
             case "dog-profile-page-recent": DogProfilePageRecent(); break;
             case "edit-user-page": EditUserPage(); break;
             case "edit-dog-page": EditDogPage(); break;
+            case "add-dog-location-page": AddDogLocation(); break;
+            case "map-page": MapPage(); break;
 
         }
     })
