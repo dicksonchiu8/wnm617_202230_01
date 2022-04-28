@@ -97,3 +97,43 @@ const submitUserEdit = () => {
    
     console.log({name,age,description});
 }
+
+const submitPassword = () => {
+    let new_password = $("#new-password").val();
+    let confirm_new_password = $("#confirm-new-password").val();
+    
+   //FORM VALIDATION
+    if(new_password !== confirm_new_password){
+        $("#change-password-error-message").html("Passwords Do Not Match!");
+          $("#change-password-error-message").addClass("visible");
+          $("#change-password-error-message").removeClass("no-display");
+         
+          // remove error message after some time
+          setTimeout(function() {
+            $("#change-password-error-message").addClass("no-display");
+            $("#change-password-error-message").removeClass("visible");
+          }, 4000);         
+    } else if (new_password.length < 1 && confirm_new_password.length < 1 ){
+        $("#change-password-error-message").html("Passwords Can't Be Empty!");
+          $("#change-password-error-message").addClass("visible");
+          $("#change-password-error-message").removeClass("no-display");
+         
+          // remove error message after some time
+          setTimeout(function() {
+            $("#change-password-error-message").addClass("no-display");
+            $("#change-password-error-message").removeClass("visible");
+          }, 4000);            
+    } else{
+        $("#change-password-success-message").html("Your Password has been updated!");
+          $("#change-password-success-message").addClass("visible");
+          $("#change-password-success-message").removeClass("no-display");
+         
+          // remove error message after some time
+          setTimeout(function() {
+            $("#change-password-success-message").addClass("no-display");
+            $("#change-password-success-message").removeClass("visible");
+          }, 4000); 
+    }       
+    
+}
+
