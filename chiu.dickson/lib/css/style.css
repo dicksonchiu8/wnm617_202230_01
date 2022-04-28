@@ -106,16 +106,24 @@ a:hover {
     background-color: #113967;
 }  
 
-#error-message {
+#error-message{
     font-size: 16px;
     text-align: center;
     color:#ff0000;
 }
+ #add-dog-error-message{
+    font-size: 16px; 
+    color:#ff0000;
+    font-weight: 600;
+ }
 .visible{
     visibility:visible;
 }
 .hidden{
     visibility:hidden;
+}
+.no-display{
+    display:none;
 }
 
 .back-to-login{
