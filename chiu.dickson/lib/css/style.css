@@ -111,7 +111,8 @@ a:hover {
     text-align: center;
     color:#ff0000;
 }
- #add-dog-error-message{
+ #add-dog-error-message,
+ #edit-dog-error-message{
     font-size: 16px; 
     color:#ff0000;
     font-weight: 600;
