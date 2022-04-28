@@ -747,7 +747,7 @@
         <header data-role="header">
             <h1></h1>
             <ul>
-                <li><a href="#" data-rel="back">Back</a></li>
+                <li><a href="#home-page">Back</a></li>
                 <li class="flex-stretch"></li>
                 <li><a href="#edit-dog-page">Edit</a></li>
             </ul>
@@ -869,11 +869,13 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#user-profile-page-info" class="js-submit-user-edit">Save</a></li>
+                <!--<li><a href="#user-profile-page-info" class="js-submit-user-edit">Save</a></li>-->
+                <li><a href="#" class="js-submit-user-edit">Save</a></li>
             </ul>            
         </header>  
         <div data-role="main" class="overscroll">
             <form id="edit-user-form" class="form">
+                <div id="edit-user-error-message" class="no-display"></div>                
                 <div class="form-control">
                     <label for="user-fullname"><h5>Your Full Name</h5></label>
                     <input type="text" placeholder="Type the Name" id="user-fullname" data-role="none" class="form-input">
