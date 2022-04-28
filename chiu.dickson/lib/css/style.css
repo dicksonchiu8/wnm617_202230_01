@@ -112,9 +112,16 @@ a:hover {
     color:#ff0000;
 }
  #add-dog-error-message,
- #edit-dog-error-message{
+ #edit-dog-error-message,
+ #change-password-error-message{
     font-size: 16px; 
     color:#ff0000;
+    font-weight: 600;
+ }
+ 
+#change-password-success-message{
+    font-size: 16px; 
+    color:#00ff00;
     font-weight: 600;
  }
 .visible{
@@ -235,6 +242,9 @@ input[type=text], input[type=password] {
     padding: 2em;
 }
 #edit-user-form{
+    padding: 2em;
+}
+#change-password-form{
     padding: 2em;
 }
 

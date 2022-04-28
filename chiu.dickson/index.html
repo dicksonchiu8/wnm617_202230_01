@@ -376,6 +376,18 @@
                     </a>
                 </div>
                 <div class="form-control">
+                    <a href="#password-page" class="settings-link" data-role="none">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <img src="lib/images/password-icon.png">    
+                        </div>
+                        <div class="card-text">
+                            <h4>Change Password</h4>
+                        </div>
+                    </div>
+                    </a>
+                </div>                
+                <div class="form-control">
                     <a href="#login-page" class="settings-link js-logout" data-role="none">
                     <div class="card">
                         <div class="card-img-container">
@@ -400,7 +412,42 @@
         -->
     </section>    
     <!-- END SETTINGS PAGE -->       
-    
+
+    <!-- CHANGE PASSWORD PAGE -->    
+    <section data-role="page" id="password-page">
+        <header data-role="header">
+            <h1>Change Password</h1>
+            <ul>
+                <li><a href="#settings-page">Back</a></li>               
+                <li class="flex-stretch"></li>
+                <li><a href="#" class="js-submit-password">Save</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <form id="change-password-form" class="form">
+                <div id="change-password-error-message" class="no-display"></div>
+                <div id="change-password-success-message" class="no-display"></div>
+                <div class="form-control">
+                    <label for="new-password"><h5>New Password</h5></label>
+                    <input type="text" placeholder="Type your New Password" id="new-password" data-role="none" class="form-input">
+                </div>
+                <div class="form-control">
+                    <label for="new-password"><h5>Confirm New Password</h5></label>
+                    <input type="text" placeholder="Type your New Password Again" id="confirm-new-password" data-role="none" class="form-input">
+                </div>
+            </form>            
+        </div>    
+        <!--
+        <footer data-role="footer">
+            <ul>
+                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
+                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
+                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
+            </ul>
+        </footer>
+        -->
+    </section>    
+    <!-- END SETTINGS PAGE -->     
     
     <!--ADD DOG PAGE-->    
     <section data-role="page" id="add-dog-page">
