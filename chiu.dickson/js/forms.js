@@ -175,3 +175,54 @@ const submitPassword = () => {
     
 }
 
+const signup1 = () => {
+    let email = $("#signup-email").val();
+    let username = $("#signup-username").val();
+    let password = $("#signup-password").val();
+    
+    //FORM VALIDATION
+    if(email.length < 1 || username.length < 1 || password.length < 1){
+        $("#signup1-error-message").html("Please Fill in All Fields.");
+        $("#signup1-error-message").addClass("visible");
+        $("#signup1-error-message").removeClass("no-display");    
+        
+        // remove error message after some time
+        setTimeout(function() {
+            $("#signup1-error-message").addClass("no-display");
+            $("#signup1-error-message").removeClass("visible");
+        }, 4000);          
+    } else {
+        //saving the values in local storage
+        localStorage.setItem("emailValue", email);
+        localStorage.setItem("userValue", username);
+        localStorage.setItem("passValue", password);
+        $.mobile.navigate("#signup-page-part2")
+    }
+}
+
+const signup2 = () => {
+    let email = localStorage.getItem("emailValue");
+    let user = localStorage.getItem("userValue");
+    let pass = localStorage.getItem("passValue");
+    
+    let fullname = $("#signup-fullname").val();
+    let age = $("#signup-user-age-select :selected").text();
+    age = parseInt(age, 10);
+    let description = $("#signup-user-description").val();
+    
+    //FORM VALIDATION
+    if(fullname.length < 1 || age.length < 1 || description.length < 1){
+        $("#signup2-error-message").html("Please Fill in All Fields.");
+        $("#signup2-error-message").addClass("visible");
+        $("#signup2-error-message").removeClass("no-display");    
+        
+        // remove error message after some time
+        setTimeout(function() {
+            $("#signup2-error-message").addClass("no-display");
+            $("#signup2-error-message").removeClass("visible");
+        }, 4000);          
+    } else {
+        console.log({email,user,pass,fullname,age,description});
+        $.mobile.navigate("#login-page")
+    }    
+}
