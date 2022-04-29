@@ -70,6 +70,7 @@
         <div data-role="main">
             <h1 class="signup-header">Sign Up Page</h1>
             <form id="signup-form" class="form" data-ajax="false">
+                <div id="signup1-error-message" class="no-display"></div>
                 <div class="form-control">
                     <label for="signup-email">Email</label>
                     <input type="text" placeholder="Type your email" id="signup-email" data-role="none" class="form-input">
@@ -83,7 +84,7 @@
                     <input type="password" placeholder="Pick a Password" id="signup-password" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">            
-                    <a href="#signup-page-part2" class="submit-button">Get Started!</a>
+                    <a href="#" class="submit-button js-submit-signup-part1">Get Started!</a>
                     <!--<input type="submit" class="submit-button" value="Sign Up!" data-role="none">-->
                     <!--<button class="submit-button" type="button" data-role="none">Sign Up Button</button>-->
                 </div>
@@ -106,6 +107,7 @@
         <div data-role="main"  class="overscroll">
             <h3 class="signup-header">Additional Information</h3>
             <form id="signup-form2" class="form" data-ajax="false">
+                <div id="signup2-error-message" class="no-display"></div>                
                 <div class="form-control">
                     <label for="signup-fullname">Your Name</label>
                     <input type="text" placeholder="Your full name" id="signup-fullname" data-role="none" class="form-input">
@@ -226,7 +228,8 @@
                     <textarea name="signup-user-desc" placeholder="Do you own any dogs?..." cols="40" rows="4" id="signup-user-description" data-role="none" class="form-textarea"></textarea>
                 </div> 
                 <div class="form-control">            
-                    <a href="#home-page" class="submit-button">Finish Up!</a>
+                    <!--<a href="#login-page" class="submit-button js-finish-signup">Finish Up!</a>-->
+                    <a href="#" class="submit-button js-finish-signup">Finish Up!</a>
                     <!--<input type="submit" class="submit-button" value="Sign Up!" data-role="none">-->
                     <!--<button class="submit-button" type="button" data-role="none">Sign Up Button</button>-->
                 </div>
@@ -464,7 +467,7 @@
             <form id="add-dog-form" class="form">
                 <div id="add-dog-error-message" class="no-display"></div>
                 <div class="form-control">
-                    <label for="signup-fullname"><h5>Name of Dog</h5></label>
+                    <label for="dog-fullname"><h5>Name of Dog</h5></label>
                     <input type="text" placeholder="Type the Name" id="dog-fullname" data-role="none" class="form-input">
                 </div>
                 <div class="form-control">
