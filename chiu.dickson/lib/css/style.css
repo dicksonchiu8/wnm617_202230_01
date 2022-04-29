@@ -114,7 +114,9 @@ a:hover {
  #add-dog-error-message,
  #edit-dog-error-message,
  #change-password-error-message,
- #edit-user-error-message{
+ #edit-user-error-message,
+ #signup1-error-message,
+ #signup2-error-message{
     font-size: 16px; 
     color:#ff0000;
     font-weight: 600;
