@@ -48,6 +48,14 @@ $(() => {
     .on("click", ".js-submit-password", function(){
         submitPassword();
     })
+
+    .on("click", ".js-submit-signup-part1", function(){
+        signup1();
+    })
+    
+    .on("click", ".js-finish-signup", function(){
+        signup2();
+    })
     
     
     // CLICKS
