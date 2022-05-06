@@ -576,7 +576,7 @@ input[type="file"]{
     top:20px;
     margin-left: auto;
     margin-right: auto;
-    z-index: 1000;
+    z-index: 20;
 }
 .edit-dog-breed-select .select,
 .signup-user-age-select .select,
@@ -645,6 +645,109 @@ input[type="file"]{
     text-decoration: none;
 }
 
+/* Modals */
+.modal {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   transition: all 0.2s;
+   opacity: 0;
+   z-index: 100;
+}
+.modal.active {
+   opacity: 1;
+}
+.modal-back {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,0.7);
+}
+.modal.active .modal-back {
+   pointer-events: initial;
+}
+.modal-back.transparent {
+   background-color: transparent;
+}
+.modal-back.passthrough {
+   pointer-events: none;
+}
+
+.modal-popup {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, calc(-50% + 3em));
+   width: calc(100vw - 3em);
+   max-height: calc(100vh - 3em);
+   overflow: hidden;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   transition: all 0.4s;
+}
+.modal.active .modal-popup {
+   transform: translate(-50%, -50%);
+   pointer-events: initial;
+}
+.modal-head,
+.modal-foot {
+   background-color: var(--color-neutral-lighter);
+   line-height: 2rem;
+   padding: 0 1em;
+}
+.modal-body {
+   background-color: #f2fbfd;
+   flex: 1 1 100%;
+   padding: 1em;
+}
+
+.modal-drawer {
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   transition: all 0.3s;
+   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.modal-drawer.left,
+.modal-drawer.right {
+   height: 100%;
+   width: 70vw;
+}
+.modal-drawer.left { left:0; transform:translateX(-100%); }
+.modal-drawer.right { right:0; transform:translateX(100%); }
+
+.modal-drawer.top,
+.modal-drawer.bottom {
+   height: 20vh;
+   width: 100%;
+}
+.modal-drawer.top { top:0; transform:translateY(-100%); }
+.modal-drawer.bottom { bottom:0; transform:translateY(100%); }
+
+.modal.active .modal-drawer {
+   transform: translate(0);
+   pointer-events: initial;
+}
+
+.animal-list-image img{
+    width:150px;
+    max-height: 100%;
+    object-fit:cover;
+}
+.animal-list-desc{ padding-left:20px;}
+.animal-list-desc h2{ margin-top: 0;padding-bottom:10px;}
+.animal-list-desc h5{
+    margin: 25px 0 0 0;
+    color: #185193;
+    text-decoration:underline;
+}
 /* Layout Classes */
 .display-flex { display: flex ;}
 .display-block { display: block ;}
