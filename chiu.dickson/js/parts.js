@@ -7,6 +7,16 @@ const makeAnimalList = templater(o=>`
 </li>`
 );
 
+const makeAnimalPopupBody = o => `
+<div class="display-flex">
+   <div class="animal-list-image"><img src="${o.img}" alt=""></div>
+   <div class="animal-list-desc">
+      <h2>${o.name}</h2>
+      <div>${o.breed}</div>
+      <h5 class="js-animal-jump noclick-children" data-id="${o.id}"><strong>Go to Profile</strong></h5>
+   </div>
+</div>
+`;
 
 const makeUserProfilePage = o => `
 
