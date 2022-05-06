@@ -1,4 +1,4 @@
-const submitAnimalAdd = () => {
+const submitAnimalAdd = async () => {
     let name = $("#dog-fullname").val();
     let breed = $("#dog-breed-select :selected").text();
     let description = $("#dog-description").val();
@@ -36,8 +36,17 @@ const submitAnimalAdd = () => {
           }, 4000);           
     } else{
         console.log({name,breed,description});
-        sessionStorage.animalId = $(this).data('id');
-        $.mobile.navigate("#add-dog-location-page")
+
+        let {id,error} = await query({
+            type: 'insert_animal',
+            params: [sessionStorage.userId, name, breed, description]
+        });
+        
+        if(error) throw(error);
+        
+        sessionStorage.animalId = id;
+        history.go(-1);
+        //$.mobile.navigate("#add-dog-location-page")
     }
     
 }
