@@ -184,7 +184,7 @@ const submitPassword = () => {
     
 }
 
-const signup1 = () => {
+const signup1 = async () => {
     let email = $("#signup-email").val();
     let username = $("#signup-username").val();
     let password = $("#signup-password").val();
@@ -201,15 +201,21 @@ const signup1 = () => {
             $("#signup1-error-message").removeClass("visible");
         }, 4000);          
     } else {
+        
+        let {id,error} = await query({
+            type: 'insert_user1',
+            params: [email, username, password]
+        });  
+        if(error) throw(error);
         //saving the values in local storage
         localStorage.setItem("emailValue", email);
         localStorage.setItem("userValue", username);
         localStorage.setItem("passValue", password);
-        $.mobile.navigate("#signup-page-part2")
+        $.mobile.navigate("#signup-page-part2");
     }
 }
 
-const signup2 = () => {
+const signup2 = async () => {
     let email = localStorage.getItem("emailValue");
     let user = localStorage.getItem("userValue");
     let pass = localStorage.getItem("passValue");
@@ -232,6 +238,15 @@ const signup2 = () => {
         }, 4000);          
     } else {
         console.log({email,user,pass,fullname,age,description});
+        
+        let {id,error} = await query({
+            type: 'insert_user',
+            params: [fullname, user, email, pass, age, description]
+        });
+        
+        if(error) throw(error);
+        
+        //sessionStorage.userId = id;
         $.mobile.navigate("#login-page")
     }    
 }
