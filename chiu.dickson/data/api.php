@@ -94,6 +94,37 @@ function makeStatement($data){
         
         
         /* INSERTS */
+         case "insert_user1":
+         $r = makeQuery($c,"SELECT id FROM `track_202230_users` WHERE `email` = ? OR `username`=? ", [ $p[0], $p[1] ]);
+         if(count($r['result'])){
+            return ["error"=>"Username or Email already exists"];
+         }
+            
+            makeQuery($c, "INSERT INTO
+            
+            `track_202230_users`
+            (`name`, `username`, `email`, `password`, `age`, `description`, `img`, `date_create`)
+            VALUES
+            (?, ?, ?, md5(?), ?, ?, 'https://via.placeholder.com/400/?text=USER', NOW())
+            ", $p, false);
+        
+            return ["id"=>$c->lastInsertId()];
+            
+        case "insert_user":
+         $r = makeQuery($c,"SELECT id FROM `track_202230_users` WHERE `username`=? OR `email` = ?", [ $p[1], $p[2] ]);
+         if(count($r['result']))
+            return ["error"=>"Username or Email already exists"];
+            
+            makeQuery($c, "INSERT INTO
+            
+            `track_202230_users`
+            (`name`, `username`, `email`, `password`, `age`, `description`, `img`, `date_create`)
+            VALUES
+            (?, ?, ?, md5(?), ?, ?, 'https://via.placeholder.com/400/?text=USER', NOW())
+            ", $p, false);
+        
+            return ["id"=>$c->lastInsertId()];
+
         
         case "insert_animal":
             makeQuery($c, "INSERT INTO
@@ -105,6 +136,18 @@ function makeStatement($data){
             ", $p, false);
         
             return ["id"=>$c->lastInsertId()];
+            
+        case "insert_location":
+            makeQuery($c, "INSERT INTO
+            
+            `track_202230_locations`
+            (`animal_id`, `lat`, `lng`, `description`, `photo`, `icon`, `date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO','https://via.placeholder.com/400/?text=ICON', NOW())
+            ", $p, false);
+        
+            return ["id"=>$c->lastInsertId()];
+            
         
         case "check_signin":
             return makeQuery($c, "SELECT id from `track_202230_users` WHERE `username` = ? AND `password` = md5(?)", $p);
