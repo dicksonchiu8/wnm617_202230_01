@@ -57,6 +57,25 @@ $(() => {
         signup2();
     })
     
+       // ACTIVATE TOOLS
+   .on("click", "[data-activate]", function() {
+      let target = $(this).data("activate");
+      $(target).addClass("active")
+   })
+   .on("click", "[data-deactivate]", function() {
+      let target = $(this).data("deactivate");
+      $(target).removeClass("active")
+   })
+   .on("click", "[data-toggle]", function() {
+      let target = $(this).data("toggle");
+      $(target).toggleClass("active")
+   })
+   .on("click", "[data-activateone]", function() {
+      let target = $(this).data("activateone");
+      $(target).addClass("active")
+         .siblings().removeClass("active")
+   })
+
     
     // CLICKS
     .on("click", ".js-logout", function() {
