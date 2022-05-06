@@ -92,6 +92,20 @@ function makeStatement($data){
         case "locations_by_animal_id":
             return makeQuery($c, "SELECT * FROM `track_202230_locations` WHERE `animal_id` = ?", $p);
         
+        
+        /* INSERTS */
+        
+        case "insert_animal":
+            makeQuery($c, "INSERT INTO
+            
+            `track_202230_dogs`
+            (`user_id`, `name`, `breed`, `description`, `img`, `date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=DOG', NOW())
+            ", $p, false);
+        
+            return ["id"=>$c->lastInsertId()];
+        
         case "check_signin":
             return makeQuery($c, "SELECT id from `track_202230_users` WHERE `username` = ? AND `password` = md5(?)", $p);
         
