@@ -16,6 +16,31 @@ const makeMap = async (target, center={ lat: 40.518884, lng: -111.950963 }) => {
     return map_el;
 }
 
+const makeRegularMarkers = (map_el, map_locs=[]) => {
+   let {map,markers} = map_el.data();
+
+   if(markers) markers.forEach(m=>m.setMap(null));
+
+   markers = [];
+
+   map_locs.forEach(l=>{
+      let m = new google.maps.Marker({
+         position: l,
+         map,
+         icon: {
+            url: l.icon,
+            scaledSize: {
+               width:40,
+               height:40,
+            }
+         }
+      });
+      markers.push(m);
+   });
+
+    map_el.data({markers});
+    setTimeout(()=>{ setMapBounds(map_el,map_locs); }, 150);
+}
 
 const makeMarkers = (map_el, map_locs=[]) => {
    let {map,markers} = map_el.data();
@@ -51,9 +76,8 @@ const setMapBounds = (map_el, map_locs) => {
         map.setCenter(map_locs[0]);
         map.setZoom(zoom);
    } else if(map_locs.length === 0){
-       if(window.location.protocol !== "https:"){
-           return;
-       } else {
+       if(window.location.protocol !== "https:") return;
+       else {
            navigator.geolocation.getCurrentPosition(p=>{
                let pos = {
                    lat:p.coords.latitude,
