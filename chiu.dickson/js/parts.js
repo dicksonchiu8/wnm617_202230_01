@@ -7,6 +7,25 @@ const makeAnimalList = templater(o=>`
 </li>`
 );
 
+const makeFilterList = async () => {
+    let animals = await query({
+        type:'dogs_by_user_id',
+        params:[sessionStorage.userId]
+    })
+
+    $("#map-filter-select").append(makeDogFilterList(animals.result));
+}
+
+const makeDogFilterList = templater(o=>`
+<option value="${o.name}">${o.name}</option>
+` 
+);
+
+const addMostRecent = () => {
+    //$("#map-filter-select").prepend( "<option value='Most Recent' selected>Most Recent</option>" );
+    document.getElementById("map-filter-select").innerHTML += "<option value='Most Recent' selected>Most Recent</option>";
+}
+
 const makeAnimalPopupBody = o => `
 <div class="display-flex">
    <div class="animal-list-image"><img src="${o.img}" alt=""></div>
@@ -64,10 +83,6 @@ function dogBreedDropdown(breed){
 
 //Calling a function inside a template literal
 // https://stackoverflow.com/questions/37963168/how-to-call-calling-a-function-inside-a-template-literal
-
-const makeEditUserPage = o => `
-
-`;
 
 function userAgeDropdown(age){
     var ages = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101]
