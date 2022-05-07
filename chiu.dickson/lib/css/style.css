@@ -115,7 +115,7 @@ a:hover {
     border-radius: 10px;
     font: inherit;
     padding: 1em;
-    margin: 60px 0 0 0;
+    margin: 100px 0 0 0;
     outline: 0;
     text-align: center;
     text-decoration: none;
@@ -322,7 +322,7 @@ img[src$="#custom_marker"]{
 
 /*img[src$="#custom_marker"]:after*/
 
-div[title]::after{
+div[title] > img[src$="#custom_marker"]::after{
   content: '';
   position: absolute;
   top: 80%;
