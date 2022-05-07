@@ -687,20 +687,22 @@
             <ul>
                 <li><a href="#" data-rel="back">Back</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#home-page">Save</a></li>
+                <li><a href="#choose-description-page">Next</a></li>
             </ul>
         </header>        
+        <input type="hidden" id="location-lat">
+        <input type="hidden" id="location-lng">
         <div data-role="main" class="map-container">
         </div>
     </section>
+    <!--END ADD DOG LOCATION PAGE-->  
+    
+    <!--MAP PAGE-->     
     <section data-role="page" id="map-page">
         <div data-role="main">
             <div class="map-filter-select">
             <div class="select">
             <select name="map-filters" id="map-filter-select" data-role="none">
-                <option value="0" disabled >Filter Map Pins</option>
-                <option value="1" selected>Most Recent</option>
-                <option value="2">Wanda</option>
             </select>
             </div>
             </div>
@@ -727,7 +729,9 @@
             </ul>
         </footer>
     </section>
-    <!--END ADD DOG LOCATION PAGE--> 
+    <!--END MAP PAGE--> 
+    
+    
 
     <!--DOG PROFILE PAGE - Recent Locations-->
     <section data-role="page" id="dog-profile-page-recent">
@@ -741,7 +745,7 @@
         <div data-role="main" class="profile-map-container">
             <div class="map"></div>
             <div class="add-location-button-wrapper">
-                    <a href="#add-dog-location-page"><img src="lib/images/add-icon-loc-2.png"></a>
+                    <a href="#add-dog-location-page" class="js-choose-animal-location"><img src="lib/images/add-icon-loc-2.png"></a>
             </div>
         </div>
         <footer data-role="footer" class="ui-profile-footer">
@@ -819,7 +823,7 @@
                 <p></p>
                 <p></p>
                 <div class="form-control">            
-                    <a href="#" class="form-button-delete">Delete Dog</a>
+                    <a href="#" class="form-button-delete js-delete-dog">Delete Dog</a>
                 </div>
             </form>
         </div>    
@@ -847,6 +851,12 @@
         <div data-role="main" class="profile-map-container">
             <div class="map"></div>
         </div> 
+            <div class="modal" id="map-drawer-user">
+             <div class="modal-back transparent passthrough" data-deactivate="#map-drawer-user"></div>
+             <div class="modal-drawer top">
+                <div class="modal-body"></div>
+             </div> 
+             </div>
         <footer data-role="footer" class="ui-profile-footer">
             <ul>
                 <li><a class="test" href="#user-profile-page-info" data-role="button"><span class="profile-footer-link">User Info</span></a></li>                
@@ -932,14 +942,18 @@
     <!--ADD LOCATION PAGE-->    
     <section data-role="page" id="add-location-page">
         <header data-role="header">
-            <h1>Add Location</h1>
+            <h1>Choose Dog</h1>
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <!--<li><a href="#user-profile-page">Profile</a></li>-->
+                <li><a href="#add-dog-location-page">Next</a></li>
             </ul>
         </header>
         <div data-role="main" class="add-location">
+                
+            <input type="hidden" id="location-animal">
+    
+            <!--
                 <div class="form-control">  
                     <h2>Add a Location to:</h2>
                     <a href="#add-dog-page" class="form-button">A New Dog</a>
@@ -959,19 +973,28 @@
                 </div>
                 <div class="form-control">
                     <a href="#add-dog-location-page" class="form-button">Add Location to Existing</a>                        
-                </div>
+                </div>-->
         </div>    
-        <!--
-        <footer data-role="footer">
-            <ul>
-                <li><a href="#home-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-home ui-btn-icon-top">Home</a></li>
-                <li><a href="#add-dog-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-add-dog ui-btn-icon-top">Add Dog</a></li>
-                <li><a href="#map-page" data-role="button" class="ui-btn ui-btn-inline ui-icon-map ui-btn-icon-top">Map</a></li>
-            </ul>
-        </footer>
-        -->
     </section>   
     <!--END ADD LOCATION PAGE-->    
+    
+    <!--ADD LOCATION DESCRIPTION PAGE-->     
+    <section data-role="page" id="choose-description-page">
+      <header data-role="header">
+         <h1>Describe The Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-location-add">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" style="padding:1em">
+                <div class="form-control">
+                    <textarea name="location-description" placeholder="Describe this location..." cols="40" rows="6" id="location-description" data-role="none" class="form-textarea"></textarea>
+                </div>      
+        </div>
+   </section>
+    <!--END ADD LOCATION DESCRIPTION PAGE-->    
 
 </body>
 </html>
