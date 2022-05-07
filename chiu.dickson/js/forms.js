@@ -51,7 +51,7 @@ const submitAnimalAdd = async () => {
     
 }
 
-const submitAnimalEdit = () => {
+const submitAnimalEdit = async () => {
     let name = $("#edit-dog-fullname").val();
     let breed = $("#edit-dog-breed-select :selected").text();
     let description = $("#edit-dog-description").val();
@@ -89,8 +89,14 @@ const submitAnimalEdit = () => {
           }, 4000);           
     } else{
         console.log({name,breed,description});
-        sessionStorage.animalId = $(this).data('id');
-        $.mobile.navigate("#dog-profile-page-info")
+
+        let {result,error} = await query({
+            type: 'update_animal',
+            params: [name, breed, description, sessionStorage.animalId]
+        });
+        
+        if(error) throw(error);
+        history.go(-1);        
     }   
 }
 
@@ -147,7 +153,7 @@ const submitUserEdit = async () => {
     console.log({name,age,description});
 }
 
-const submitPassword = () => {
+const submitPassword = async () => {
     let new_password = $("#new-password").val();
     let confirm_new_password = $("#confirm-new-password").val();
     
@@ -173,6 +179,12 @@ const submitPassword = () => {
             $("#change-password-error-message").removeClass("visible");
           }, 4000);            
     } else{
+        let {result,error} = await query({
+            type: 'update_password',
+            params: [new_password, sessionStorage.userId]
+        });
+        if(error) throw(error);
+        
         $("#change-password-success-message").html("Your Password has been updated!");
           $("#change-password-success-message").addClass("visible");
           $("#change-password-success-message").removeClass("no-display");
@@ -182,6 +194,7 @@ const submitPassword = () => {
             $("#change-password-success-message").addClass("no-display");
             $("#change-password-success-message").removeClass("visible");
           }, 4000); 
+          history.go(-1);
     }       
     
 }
