@@ -67,17 +67,21 @@ const UserProfilePageRecentPins = async() => {
         console.log(m)
         m.addListener("click", function(e){
             console.log(valid_animals[i]);
-            
+            let animal = valid_animals[i];
             //Just Navigate to Profile Page
             //sessionStorage.animalId = valid_animals[i].animal_id;
             //$.mobile.navigate("#animal-profile-page");
             
             // Open Google InfoWindow
-             map_el.data("infoWindow")
-                .open(map_el.data("map"),m);
-             map_el.data("infoWindow")
-                .setContent('<a href="#" id="marker_profile_link" class="js-animal-jump noclick-children" data-id='+valid_animals[i].animal_id+'">'+valid_animals[i].name+'</a>');
-            
+            // map_el.data("infoWindow")
+            //    .open(map_el.data("map"),m);
+            // map_el.data("infoWindow")
+            //    .setContent('<a href="#" id="marker_profile_link" class="js-animal-jump noclick-children" data-id='+valid_animals[i].animal_id+'">'+valid_animals[i].name+'</a>');
+                        
+            $("#map-drawer-user")
+            .addClass("active")
+            .find(".modal-body")
+            .html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
         })
     })
 
@@ -156,9 +160,17 @@ const EditDogPage = async() => {
 
 const AddDogLocation = async() => {
     let map_el = await makeMap("#add-dog-location-page .map-container");
+    
+    map_el.data("map").addListener("click", function(e){
+        console.log(e)
+        $("#location-lat").val(e.latLng.lat())
+        $("#location-lng").val(e.latLng.lng())
+        makeRegularMarkers(map_el,[e.latLng])
+    })
 }
 
 const MapPage = async() => {
+    
     await checkData(()=>window.google);
     //console.log(window.google)
     let {result} = await query({
@@ -201,7 +213,6 @@ const MapPage = async() => {
         })
     })
 }
-
 
 const AddDogPage = () => {
     console.log("honk2")
