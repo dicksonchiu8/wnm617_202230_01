@@ -18,7 +18,7 @@ $(() => {
             case "edit-user-page": EditUserPage(); break;
             case "edit-dog-page": EditDogPage(); break;
             case "add-dog-location-page": AddDogLocation(); break;
-            case "map-page": MapPage(); break;
+            case "map-page": MapPage(); makeFilterList(); addMostRecent(); break;
 
         }
     })
@@ -59,7 +59,15 @@ $(() => {
 
     .on("click", ".js-delete-dog", function(){
         submitDeleteDog();
-    })    
+    })
+    
+    .on("click", ".js-submit-location-add", function(e){
+        submitLocationAdd();
+    })
+    
+    .on("click", ".js-choose-animal-location", function(e){
+        $("#location-animal").val(sessionStorage.animalId);
+    })
     
        // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {
