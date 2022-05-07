@@ -164,6 +164,33 @@ function makeStatement($data){
                 return $r;
             }
             return ["result"=>"Success"];
+
+        case "update_password":
+            makeQuery($c, "UPDATE
+            `track_202230_users`
+            SET
+                `password` = md5(?)
+            WHERE `id`= ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return ["result"=>"Success"];
+            
+        case "update_animal":
+            makeQuery($c, "UPDATE
+            `track_202230_dogs`
+            SET
+                `name` = ?,
+                `breed` = ?,
+                `description` = ?
+                WHERE `id`= ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return ["result"=>"Success"];           
+       
         
         case "check_signin":
             return makeQuery($c, "SELECT id from `track_202230_users` WHERE `username` = ? AND `password` = md5(?)", $p);
