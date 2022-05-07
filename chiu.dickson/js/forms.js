@@ -199,6 +199,15 @@ const submitPassword = async () => {
     
 }
 
+const submitDeleteDog = async () => {
+        let {result,error} = await query({
+            type: 'delete_animal',
+            params: [sessionStorage.animalId]
+        });
+        if(error) throw(error);
+        $.mobile.navigate("#home-page");
+}
+
 const signup1 = async () => {
     let email = $("#signup-email").val();
     let username = $("#signup-username").val();
