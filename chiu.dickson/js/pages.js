@@ -139,8 +139,20 @@ const DogProfilePageRecent = async() => {
    })
    console.log(locations)
 
-   let map_el = await makeMap("#dog-profile-page-recent .map");
-   makeMarkers(map_el,locations);
+    let map_el = await makeMap("#dog-profile-page-recent .map");
+    makeMarkers(map_el,locations);
+    map_el.data("markers").forEach((m,i)=>{
+        console.log(m)
+        m.addListener("click", function(e){
+            let location = locations[i];
+            
+            console.log(location)
+            $("#map-drawer-dog-recent")
+            .addClass("active")
+            .find(".modal-body")
+            .html(makeLocationPopupBody({...location}))
+        })
+    })   
     
 }
 
