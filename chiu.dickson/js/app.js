@@ -56,6 +56,10 @@ $(() => {
     .on("click", ".js-finish-signup", function(){
         signup2();
     })
+
+    .on("click", ".js-delete-dog", function(){
+        submitDeleteDog();
+    })    
     
        // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {
