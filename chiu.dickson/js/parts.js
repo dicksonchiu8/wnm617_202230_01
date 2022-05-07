@@ -37,6 +37,14 @@ const makeAnimalPopupBody = o => `
 </div>
 `;
 
+const makeLocationPopupBody = o => `
+<div class="display-flex">
+   <div class="animal-list-desc">
+      <h2>Location Description</h2>
+      <div>${o.description}</div>
+   </div>
+</div>
+`;
 const makeUserProfilePage = o => `
 
                 <div class="form-control user-presentation">
