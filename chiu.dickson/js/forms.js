@@ -94,12 +94,7 @@ const submitAnimalEdit = () => {
     }   
 }
 
-const submitUserAdd = () => {
-
-}
-
-
-const submitUserEdit = () => {
+const submitUserEdit = async () => {
     let name = $("#user-fullname").val();
     let age = $("#user-age-select :selected").text();
     age = parseInt(age, 10);
@@ -139,8 +134,15 @@ const submitUserEdit = () => {
           }, 4000);           
     } else{
         console.log({name,age,description});
+        let {result,error} = await query({
+            type: 'update_user',
+            params: [name, age, description, sessionStorage.userId]
+        });
+        
+        if(error) throw(error);
         //sessionStorage.animalId = $(this).data('id');
-        $.mobile.navigate("#user-profile-page-info")
+        //$.mobile.navigate("#user-profile-page-info")
+        history.go(-1);
     }    
     console.log({name,age,description});
 }
