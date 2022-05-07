@@ -274,3 +274,18 @@ const signup2 = async () => {
         $.mobile.navigate("#login-page")
     }    
 }
+
+const submitLocationAdd = async () => {
+    let animal = $("#location-animal").val();
+    let lat = $("#location-lat").val();
+    let lng = $("#location-lng").val();
+    let description = $("#location-description").val();
+    let {result,error} = await query({
+        type: 'insert_location',
+        params: [animal, lat, lng, description]
+    });    
+    
+    if(error) throw(error);
+    history.go(-2);
+    
+}
