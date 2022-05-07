@@ -149,6 +149,22 @@ function makeStatement($data){
             return ["id"=>$c->lastInsertId()];
             
         
+        
+        /* UPDATES */
+        case "update_user":
+            makeQuery($c, "UPDATE
+            `track_202230_users`
+            SET
+                `name` = ?,
+                `age` = ?,
+                `description` = ?
+                WHERE `id`= ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return ["result"=>"Success"];
+        
         case "check_signin":
             return makeQuery($c, "SELECT id from `track_202230_users` WHERE `username` = ? AND `password` = md5(?)", $p);
         
