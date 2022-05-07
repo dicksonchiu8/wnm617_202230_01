@@ -192,6 +192,18 @@ function makeStatement($data){
             return ["result"=>"Success"];           
        
         
+       /* DELETES */
+        case "delete_animal":
+            makeQuery($c, "DELETE FROM
+            `track_202230_dogs`
+                WHERE `id`= ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return ["result"=>"Success"];        
+       
+       
         case "check_signin":
             return makeQuery($c, "SELECT id from `track_202230_users` WHERE `username` = ? AND `password` = md5(?)", $p);
         
