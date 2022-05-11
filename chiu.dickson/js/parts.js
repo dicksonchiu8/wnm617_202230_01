@@ -17,7 +17,7 @@ const makeFilterList = async () => {
 }
 
 const makeDogFilterList = templater(o=>`
-<option value="${o.name}">${o.name}</option>
+<option value="${o.id}">${o.name}</option>
 ` 
 );
 
@@ -51,10 +51,13 @@ const makeUserProfilePage = o => `
                     <div class="img-container">
                         <img src="${o.img}"/>
                     </div> 
+                    <div class="edit-image-link">Edit Image</div>
+                    <div class="profile-info">
                      <h4>Name:</h4><span>${o.name}</span><br>
                      <h4>Email:</h4><span>${o.email}</span><br>
                      <h4>Age:</h4><span>${o.age}</span>
                      <h4>About:</h4><span>${o.description}</span>
+                    </div>
                 </div>
 `;
 
@@ -65,9 +68,11 @@ const makeDogProfilePage = o => `
                     <div class="img-container">
                         <img src="${o.img}"/>
                     </div> 
+                    <div class="profile-info">                    
                      <h4>Name:</h4><span>${o.name}</span><br>
                      <h4>Breed:</h4><span>${o.breed}</span>
                      <h4>Description:</h4><span>${o.description}</span>
+                     </div>
                 </div>
 
 `;
