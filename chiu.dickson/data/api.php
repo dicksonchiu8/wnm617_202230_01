@@ -46,6 +46,19 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
    }
 }
 
+function makeUpload($file, $folder){
+    $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+    if(@move_uploaded_file(
+        $_FILES[$file]['tmp_name'],
+        $folder.$filename
+    )) return ["result"=>$filename];
+    else return [
+        "error"=>"File Upload Failed",
+        "filename"=>$filename
+    ];
+}
+
+
 function makeStatement($data){
     $c = makeConn();
     $t = $data->type;
@@ -97,9 +110,16 @@ function makeStatement($data){
          case "insert_user1":
          $r = makeQuery($c,"SELECT id FROM `track_202230_users` WHERE `email` = ? OR `username`=? ", [ $p[0], $p[1] ]);
          if(count($r['result'])){
+            /*
+            <script type="text/javascript">
+                $("#taken_username").val("Taken Username.")
+            </script>
+            */
+          
             return ["error"=>"Username or Email already exists"];
          }
-            
+         
+            /*
             makeQuery($c, "INSERT INTO
             
             `track_202230_users`
@@ -107,8 +127,9 @@ function makeStatement($data){
             VALUES
             (?, ?, ?, md5(?), ?, ?, 'https://via.placeholder.com/400/?text=USER', NOW())
             ", $p, false);
+            */
         
-            return ["id"=>$c->lastInsertId()];
+            //return ["id"=>$c->lastInsertId()];
             
         case "insert_user":
          $r = makeQuery($c,"SELECT id FROM `track_202230_users` WHERE `username`=? OR `email` = ?", [ $p[1], $p[2] ]);
@@ -191,6 +212,30 @@ function makeStatement($data){
             }
             return ["result"=>"Success"];           
        
+       
+       /* UPLOAD */
+       case "update_user_image":
+            makeQuery($c,"UPDATE
+            `track_202230_users`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return["result"=>"Success"];
+            
+        case "update_animal_image":
+            makeQuery($c,"UPDATE
+            `track_202230_dogs`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return["result"=>"Success"];    
+       
         
        /* DELETES */
         case "delete_animal":
@@ -223,6 +268,11 @@ function makeStatement($data){
          [3]
       )
 */
+
+if(!empty($_FILES)){
+    $r = makeUpload("image","../uploads/");
+    die(json_encode($r));
+}
 
 $data = json_decode(file_get_contents("php://input"));
 
