@@ -214,6 +214,7 @@ const signup1 = async () => {
     let password = $("#signup-password").val();
     
     //FORM VALIDATION
+
     if(email.length < 1 || username.length < 1 || password.length < 1){
         $("#signup1-error-message").html("Please Fill in All Fields.");
         $("#signup1-error-message").addClass("visible");
@@ -225,16 +226,28 @@ const signup1 = async () => {
             $("#signup1-error-message").removeClass("visible");
         }, 4000);          
     } else {
-        
         let {id,error} = await query({
             type: 'insert_user1',
             params: [email, username, password]
         });  
-        if(error) throw(error);
+        if(error){
+            $("#signup1-error-message").html("Username or Email has been taken");
+            $("#signup1-error-message").addClass("visible");
+            $("#signup1-error-message").removeClass("no-display");    
+            
+            // remove error message after some time
+            setTimeout(function() {
+                $("#signup1-error-message").addClass("no-display");
+                $("#signup1-error-message").removeClass("visible");
+            }, 4000);                     
+            throw(error);  
+        } 
         //saving the values in local storage
         localStorage.setItem("emailValue", email);
         localStorage.setItem("userValue", username);
         localStorage.setItem("passValue", password);
+        //emails.push(email);
+        //usernames.push(username);
         $.mobile.navigate("#signup-page-part2");
     }
 }
