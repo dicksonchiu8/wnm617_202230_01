@@ -142,11 +142,12 @@ function makeStatement($data){
             `track_202230_users`
             (`name`, `username`, `email`, `password`, `age`, `description`, `img`, `date_create`)
             VALUES
-            (?, ?, ?, md5(?), ?, ?, 'https://via.placeholder.com/400/?text=USER', NOW())
+            (?, ?, ?, md5(?), ?, ?, ?, NOW())
             ", $p, false);
         
             return ["id"=>$c->lastInsertId()];
 
+/*'https://via.placeholder.com/400/?text=USER'*/
         
         case "insert_animal":
             makeQuery($c, "INSERT INTO
