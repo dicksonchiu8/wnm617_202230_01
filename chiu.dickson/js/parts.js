@@ -51,7 +51,7 @@ const makeUserProfilePage = o => `
                     <div class="img-container">
                         <img src="${o.img}"/>
                     </div> 
-                    <div class="edit-image-link">Edit Image</div>
+                    <div class="edit-image-link"><a href="#user-edit-photo-page">Edit Image</a></div>
                     <div class="profile-info">
                      <h4>Name:</h4><span>${o.name}</span><br>
                      <h4>Email:</h4><span>${o.email}</span><br>
@@ -68,6 +68,7 @@ const makeDogProfilePage = o => `
                     <div class="img-container">
                         <img src="${o.img}"/>
                     </div> 
+                    <div class="edit-image-link"><a href="#animal-edit-photo-page">Edit Image</a></div>
                     <div class="profile-info">                    
                      <h4>Name:</h4><span>${o.name}</span><br>
                      <h4>Breed:</h4><span>${o.breed}</span>
