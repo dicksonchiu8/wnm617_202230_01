@@ -246,16 +246,23 @@ const signup1 = async () => {
         localStorage.setItem("emailValue", email);
         localStorage.setItem("userValue", username);
         localStorage.setItem("passValue", password);
-        //emails.push(email);
-        //usernames.push(username);
-        $.mobile.navigate("#signup-page-part2");
+        //$.mobile.navigate("#signup-page-part2");
+        $.mobile.navigate("#signup-user-photo-page");
     }
+}
+
+const signupImage = async () => {
+    
+    let img = $("#signup-user-photo-image").val();
+    localStorage.setItem("imgValue", img);
+    $.mobile.navigate("#signup-page-part2");
 }
 
 const signup2 = async () => {
     let email = localStorage.getItem("emailValue");
     let user = localStorage.getItem("userValue");
     let pass = localStorage.getItem("passValue");
+    let img = localStorage.getItem("imgValue");
     
     let fullname = $("#signup-fullname").val();
     let age = $("#signup-user-age-select :selected").text();
@@ -278,7 +285,7 @@ const signup2 = async () => {
         
         let {id,error} = await query({
             type: 'insert_user',
-            params: [fullname, user, email, pass, age, description]
+            params: [fullname, user, email, pass, age, description, img]
         });
         
         if(error) throw(error);
