@@ -95,36 +95,10 @@
         </div>
     </section> 
     <!--END SIGNUP PAGE Part 1-->
-
-    <!--SIGNUP USER PHOTO PAGE--> 
-   <section data-role="page" id="signup-user-photo-page">
-      <header data-role="header">
-         <h1>Profile Pic</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-submit-user-signup-upload">Next</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-          <h5>Tap the screen to pick an image</h5>          
-         <input type="hidden" id="signup-user-photo-image">
-         <label class="imagepicker replace">
-            <input type='file' id="signup-user-photo-input" data-role="none">
-         </label>
-      </div>
-   </section>
-    <!--END SIGNUP USER PHOTO PAGE-->    
     
     <!--SIGNUP PAGE Part 2-->
     <section data-role="page" id="signup-page-part2">
-        <!--
-        <header data-role="header">
-            <h1>Sign Up Page</h1>
-            <a href="#" data-rel="back">Back</a>
-        </header>   
-        -->
-        
+
         <div data-role="main"  class="overscroll">
             <h3 class="signup-header">Additional Information</h3>
             <form id="signup-form2" class="form" data-ajax="false">
@@ -250,7 +224,7 @@
                 </div> 
                 <div class="form-control">            
                     <!--<a href="#login-page" class="submit-button js-finish-signup">Finish Up!</a>-->
-                    <a href="#" class="submit-button js-finish-signup">Finish Up!</a>
+                    <a href="#" class="submit-button js-submit-signup-part2">Last Step!</a>
                     <!--<input type="submit" class="submit-button" value="Sign Up!" data-role="none">-->
                     <!--<button class="submit-button" type="button" data-role="none">Sign Up Button</button>-->
                 </div>
@@ -261,6 +235,38 @@
         </div>
     </section> 
     <!--END SIGNUP PAGE Part 2-->    
+    
+    <!--SIGNUP USER PHOTO PAGE--> 
+   <section data-role="page" id="signup-user-photo-page">
+      <!-- 
+      <header data-role="header">
+         <h1>Profile Pic</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-user-signup-upload">Next</a></li>
+         </ul>
+      </header>
+      -->
+       <h3 class="signup-header">Upload Profile Image</h3>
+       <h5>Tap the screen</h5>   
+      <div data-role="main">
+         <form id="signup-form3" class="form" data-ajax="false"> 
+             <input type="hidden" id="signup-user-photo-image">
+             <label class="imagepicker replace">
+                <input type='file' id="signup-user-photo-input" data-role="none">
+             </label>
+            <div class="form-control floater bottom"> 
+                <a href="#signup-page" class="submit-button js-submit-user-signup-upload">Finished! Back to Login.</a>
+                <a href="#signup-page-part2" class="signup-button">Go Back</a>
+            </div>
+            <div class="form-control">        
+            </div>
+        </form>
+      </div>
+   </section>
+    <!--END SIGNUP USER PHOTO PAGE--> 
+    
     
     <!--HOME PAGE (ANIMAL LIST PAGE) -->
     <section data-role="page" id="home-page">
