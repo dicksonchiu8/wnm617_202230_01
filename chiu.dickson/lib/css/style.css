@@ -407,12 +407,32 @@ input[type="file"]{
 .edit-image-link{
     margin-top:5px;
     text-align:center;
+    color: #185193;
 }
 
 .profile-info{
     margin-top:45px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#animal-edit-photo-page h5,
+#user-edit-photo-page h5
+{ margin-top:40px; text-align:center;}
+
+/* Image Picker */
+.imagepicker.replace {
+   position: absolute;
+   top: 0;
+   left: 10%;
+   width: 80%;
+   height: 100%;
+   background-position: center;
+   background-size: contain;
+   background-repeat:  no-repeat;
+}
+.imagepicker.replace input {
+   display: none;
 }
 .ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
     border-style: none;
