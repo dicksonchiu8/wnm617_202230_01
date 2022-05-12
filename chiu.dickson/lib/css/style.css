@@ -260,6 +260,9 @@ input[type=text], input[type=password] {
 #signup-form2 {
     padding: 2em;
 }
+#signup-form3 {
+    padding: 2em;
+}
 #add-dog-form {
     padding: 2em;
 }
@@ -417,17 +420,22 @@ input[type="file"]{
 }
 
 #animal-edit-photo-page h5,
-#user-edit-photo-page h5,
-#signup-user-photo-page h5
+#user-edit-photo-page h5
 { margin-top:40px; text-align:center;}
+
+
+#signup-user-photo-page h5{
+    text-align:center;
+    margin-top:0;
+}
 
 /* Image Picker */
 .imagepicker.replace {
    position: absolute;
-   top: 0;
+   top: 10%;
    left: 10%;
    width: 80%;
-   height: 100%;
+   height: 70%;
    background-position: center;
    background-size: contain;
    background-repeat:  no-repeat;
@@ -702,6 +710,14 @@ input[type="file"]{
 .settings-link{
     text-decoration: none;
 }
+
+
+/* floater */
+.floater { position: absolute; }
+.floater.top { top:1rem }
+.floater.right { right:1rem }
+.floater.bottom { bottom:1rem }
+.floater.left { left:1rem }
 
 /* Modals */
 .modal {
