@@ -55,9 +55,13 @@ $(() => {
         signup1();
     })
     
-    .on("click", ".js-finish-signup", function(){
+    .on("click", ".js-submit-signup-part2", function(){
         signup2();
     })
+    
+    .on("click", ".js-submit-user-signup-upload", function(e){
+        signupImage();
+    })   
 
     .on("click", ".js-delete-dog", function(){
         submitDeleteDog();
@@ -104,9 +108,7 @@ $(() => {
          history.go(-1);
       })
    })
-    .on("click", ".js-submit-user-signup-upload", function(e){
-        signupImage();
-    })    
+ 
     
     
        // ACTIVATE TOOLS
