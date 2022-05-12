@@ -104,7 +104,9 @@ $(() => {
          history.go(-1);
       })
    })
-    
+    .on("click", ".js-submit-user-signup-upload", function(e){
+        signupImage();
+    })    
     
     
        // ACTIVATE TOOLS
