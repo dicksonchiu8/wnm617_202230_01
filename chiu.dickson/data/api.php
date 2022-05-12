@@ -165,7 +165,7 @@ function makeStatement($data){
             `track_202230_locations`
             (`animal_id`, `lat`, `lng`, `description`, `photo`, `icon`, `date_create`)
             VALUES
-            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO','https://via.placeholder.com/400/?text=ICON', NOW())
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO','https://dchiu.com/aau/wnm617/chiu.dickson/lib/images/map_pin_3.png', NOW())
             ", $p, false);
         
             return ["id"=>$c->lastInsertId()];
