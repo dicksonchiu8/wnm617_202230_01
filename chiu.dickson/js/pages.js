@@ -104,6 +104,18 @@ const EditUserPage = async() => {
     
 }
 
+const UserEditPhotoPage = async () => {
+   let {result:users} = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   })
+   let [user] = users;
+
+   $("#user-edit-photo-page .imagepicker").css({
+      "background-image":`url(${user.img})`
+   })
+}
+
 const DogProfilePage = async() => {
     let {result:animals} = await query({
         type:'dog_by_id',
@@ -168,6 +180,18 @@ const EditDogPage = async() => {
     $("#edit-dog-fullname").val(animal.name);
     dogBreedDropdown(animal.breed);
     $("#edit-dog-description").text(animal.description)    
+}
+
+const AnimalEditPhotoPage = async () => {
+   let {result:animals} = await query({
+      type:'dog_by_id',
+      params:[sessionStorage.animalId]
+   })
+   let [animal] = animals;
+
+   $("#animal-edit-photo-page .imagepicker").css({
+      "background-image":`url(${animal.img})`
+   })
 }
 
 const AddDogLocation = async() => {
