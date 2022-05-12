@@ -47,15 +47,16 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
 }
 
 function makeUpload($file, $folder){
-    $filename = microtime(true) . "_" . $_FILES[$file]['name'];
-    if(@move_uploaded_file(
-        $_FILES[$file]['tmp_name'],
-        $folder.$filename
-    )) return ["result"=>$filename];
-    else return [
-        "error"=>"File Upload Failed",
-        "filename"=>$filename
-    ];
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ["result"=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "filename"=>$filename
+   ];
 }
 
 
