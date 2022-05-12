@@ -19,6 +19,8 @@ $(() => {
             case "edit-dog-page": EditDogPage(); break;
             case "add-dog-location-page": AddDogLocation(); break;
             case "map-page": MapPage(); makeFilterList(); addMostRecent(); break;
+            case "user-edit-photo-page": UserEditPhotoPage(); break;
+            case "animal-edit-photo-page": AnimalEditPhotoPage(); break;            
 
         }
     })
@@ -68,6 +70,42 @@ $(() => {
     .on("click", ".js-choose-animal-location", function(e){
         $("#location-animal").val(sessionStorage.animalId);
     })
+    
+    
+   .on("change",".imagepicker input", function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         let filename = `uploads/${d.result}`;
+         console.log(filename)
+         $(this).parent().prev().val(filename)
+         $(this).parent().css({
+            "background-image":`url(${filename})`
+         })
+      })
+   })
+   .on("click", ".js-submit-user-upload", function(e) {
+      let image = $("#user-edit-photo-image").val();
+      query({
+         type: "update_user_image",
+         params: [image, sessionStorage.userId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+   })
+   .on("click", ".js-submit-animal-upload", function(e) {
+      let image = $("#animal-edit-photo-image").val();
+      query({
+         type: "update_animal_image",
+         params: [image, sessionStorage.animalId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+   })
+    
+    
     
        // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {
