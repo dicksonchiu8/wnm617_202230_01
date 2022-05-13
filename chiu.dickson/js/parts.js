@@ -6,6 +6,7 @@ const makeAnimalList = templater(o=>`
     </a>
 </li>`
 );
+//Reminder for html spacing: https://www.geeksforgeeks.org/how-to-insert-spaces-tabs-in-text-using-html-css/
 
 const makeFilterList = async () => {
     let animals = await query({
