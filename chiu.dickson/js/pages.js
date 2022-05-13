@@ -250,6 +250,71 @@ const MapPage = async() => {
     })
 }
 
+const checkFilter = async () => {
+    let filter = $("#map-filter-select option:selected").val();
+    console.log(filter)
+    
+    if(filter === "Most Recent"){
+            let {result} = await query({
+                type:'recent_animal_locations',
+                params:[sessionStorage.userId]
+            });
+            //console.log(result);    
+            let valid_animals = result.reduce((r,o)=>{
+               o.icon = o.img 
+               if(o.lat && o.lng) r.push(o);
+               return r;
+            },[]);
+            
+            let map_el = await makeMap("#map-page .map-container");
+            console.log(map_el.data())
+            makeMarkers(map_el, valid_animals);
+            
+            map_el.data("markers").forEach((m,i)=>{
+                console.log(m)
+                m.addListener("click", function(e){
+                    console.log(valid_animals[i]);
+                    let animal = valid_animals[i];
+                    
+                    $("#map-drawer")
+                    .addClass("active")
+                    .find(".modal-body")
+                    .html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
+                })
+            })        
+    } else {
+            let {result} = await query({
+                type:'recent_animal_by_id',
+                params:[sessionStorage.userId, filter]
+            });
+            //console.log(result);    
+            let valid_animals = result.reduce((r,o)=>{
+               o.icon = o.img 
+               if(o.lat && o.lng) r.push(o);
+               return r;
+            },[]);
+            
+            let map_el = await makeMap("#map-page .map-container");
+            console.log(map_el.data())
+            makeMarkers(map_el, valid_animals);
+            
+            map_el.data("markers").forEach((m,i)=>{
+                console.log(m)
+                m.addListener("click", function(e){
+                    console.log(valid_animals[i]);
+                    let animal = valid_animals[i];
+                    
+                    $("#map-drawer")
+                    .addClass("active")
+                    .find(".modal-body")
+                    .html(makeAnimalPopupBody({...animal, id:animal.animal_id}))
+                })
+            })          
+        
+    }
+}
+
+
 const AddDogPage = () => {
     console.log("honk2")
 }
