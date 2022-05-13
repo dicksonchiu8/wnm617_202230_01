@@ -293,15 +293,15 @@
                         <img src="lib/images/settings_icon.png" class="settings-profile-pic">
                     </a>
                 </li>
-                <!--<li><a href="#login-page" class="js-logout">Logout</a></li>-->
             </ul>
         </header>
         <div data-role="main" class="overscroll">
             <ul data-role="listview" data-filter="true" data-filter-placeholder="Search your dogs..." data-inset="true" class="dog-list">
+                <!--
                 <li>
                     <a href="#dog-profile-page-info">
                         <img src="lib/images/wanda.jpeg">
-                        <h2>Wanda &ensp;&#8211;&ensp; French Bulldog</h2><!--Reminder for html spacing: https://www.geeksforgeeks.org/how-to-insert-spaces-tabs-in-text-using-html-css/-->
+                        <h2>Wanda &ensp;&#8211;&ensp; French Bulldog</h2>
                         </a>
                 </li>
                 <li>
@@ -375,8 +375,10 @@
                         <img src="lib/images/chowchow.jpeg">
                         <h2>PoPo &ensp;&#8211;&ensp; Chow Chow</h2>
                     </a>
-                </li>                 
+                </li> 
+                -->
             </ul>
+            <h5 id="no-dogs-text" class="hidden">Looks like you have no dogs yet. You can press 'Add Dog' to add one to your list.</h5>
         </div>    
         <footer data-role="footer">
             <ul>
@@ -688,8 +690,9 @@
                 </div>
                 <div class="form-control">
                     <h5>Take Photo</h5>
+                    <input type="hidden" id="add-dog-photo-image">
                     <label for="file" class="take-photo">
-                        <input type="file" accept="image/*;capture=camera">
+                        <input type='file' id="animal-add-photo-input" data-role="none">
                     </label>  
                 </div>
                 <div class="form-control">
@@ -853,15 +856,17 @@
                     </div>
                     
                 </div>
+                <!--
                 <div class="form-control">
                     <h5>Change Photo</h5>
                     <label for="file" class="take-photo">
                         <input type="file" accept="image/*;capture=camera">
                     </label>  
                 </div>
+                -->
                 <div class="form-control">
                     <label for="edit-dog-description"><h5>Description</h5></label>
-                    <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="3" id="edit-dog-description" data-role="none" class="form-textarea"></textarea>
+                    <textarea name="dog-desc" placeholder="Describe the Dog..." cols="40" rows="7" id="edit-dog-description" data-role="none" class="form-textarea"></textarea>
                 </div>  
                 <p></p>
                 <p></p>
@@ -981,14 +986,8 @@
                     </div>
                 </div>
                 <div class="form-control">
-                    <h5>Change Photo</h5>
-                    <label for="file" class="take-photo">
-                        <input type="file" accept="image/*;capture=camera">
-                    </label>  
-                </div>
-                <div class="form-control">
                     <label for="user-about"><h5>Description</h5></label>
-                    <textarea name="user-about" placeholder="Describe the Dog..." cols="40" rows="3" id="user-about" data-role="none" class="form-textarea"></textarea>
+                    <textarea name="user-about" placeholder="Describe the Dog..." cols="40" rows="5" id="user-about" data-role="none" class="form-textarea"></textarea>
                 </div>
             </form>
         </div> 
