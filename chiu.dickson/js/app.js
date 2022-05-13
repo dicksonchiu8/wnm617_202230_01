@@ -75,6 +75,9 @@ $(() => {
         $("#location-animal").val(sessionStorage.animalId);
     })
     
+    .on("click", ".js-check-filter", function(e){
+        checkFilter();
+    })
     
    .on("change",".imagepicker input", function(e){
       checkUpload(this.files[0])
