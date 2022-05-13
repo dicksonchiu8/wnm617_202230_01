@@ -2,6 +2,7 @@ const submitAnimalAdd = async () => {
     let name = $("#dog-fullname").val();
     let breed = $("#dog-breed-select :selected").text();
     let description = $("#dog-description").val();
+    let img = $("#add-dog-photo-image").val();
    
    //FORM VALIDATION
     if(name.length < 1 && breed === "Select a dog breed"){
@@ -35,11 +36,11 @@ const submitAnimalAdd = async () => {
             $("#add-dog-error-message").removeClass("visible");
           }, 4000);           
     } else{
-        console.log({name,breed,description});
+        console.log({name,breed,description,img});
 
         let {id,error} = await query({
             type: 'insert_animal',
-            params: [sessionStorage.userId, name, breed, description]
+            params: [sessionStorage.userId, name, breed, description, img]
         });
         
         if(error) throw(error);
