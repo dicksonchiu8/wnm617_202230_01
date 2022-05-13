@@ -106,6 +106,23 @@ function makeStatement($data){
         case "locations_by_animal_id":
             return makeQuery($c, "SELECT * FROM `track_202230_locations` WHERE `animal_id` = ?", $p);
         
+        case "recent_animal_by_id":
+            return makeQuery($c,"SELECT *
+                FROM `track_202230_dogs` a
+                JOIN (
+                    SELECT lg.*
+                    FROM `track_202230_locations` lg
+                    WHERE lg.id = (
+                        SELECT lt.id
+                        FROM `track_202230_locations` lt
+                        WHERE lt.animal_id = lg.animal_id
+                        ORDER BY lt.date_create DESC
+                        LIMIT 1
+                    )
+                ) l
+                ON a.id = l.animal_id
+                WHERE a.user_id = ? AND l.animal_id = ?
+            ", $p);
         
         /* INSERTS */
          case "insert_user1":
