@@ -12,8 +12,13 @@ const HomePage = async() => {
         type:'dogs_by_user_id',
         params:[sessionStorage.userId]
     })
+    if(animals.result < 1){
+        $("#no-dogs-text").removeClass("hidden");
+    } else {
+        $("#no-dogs-text").addClass("hidden");
+    }
+    console.log(animals)
     
-    //console.log(animals);
     $("#home-page .dog-list").html(makeAnimalList(animals.result));
 }
 
@@ -315,6 +320,10 @@ const checkFilter = async () => {
 }
 
 
-const AddDogPage = () => {
-    console.log("honk2")
+const AddDogPage = async () => {
+    $("#dog-fullname").val("");
+    $("#dog-breed-select option:selected").removeAttr("selected");
+    $("#dog-description").val("");
+    let imagePath = "../images/search-icon.png";
+    $("#add-dog-photo-image").css("background-image", "url("+ imagePath +") no-repeat");
 }
