@@ -734,7 +734,7 @@ input[type="file"]{
 .floater { position: absolute; }
 .floater.top { top:1rem }
 .floater.right { right:1rem }
-.floater.bottom { bottom:1rem }
+.floater.bottom { bottom:1rem; width:84%; }
 .floater.left { left:1rem }
 
 /* Modals */
