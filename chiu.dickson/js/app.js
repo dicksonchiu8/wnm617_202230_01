@@ -91,6 +91,19 @@ $(() => {
          })
       })
    })
+   
+    .on("change",".take-photo input", function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         let filename = `uploads/${d.result}`;
+         console.log(filename)
+         $(this).parent().prev().val(filename)
+         $(this).parent().css({
+            "background-image":`url(${filename})`
+         })
+      })
+   })
    .on("click", ".js-submit-user-upload", function(e) {
       let image = $("#user-edit-photo-image").val();
       query({
