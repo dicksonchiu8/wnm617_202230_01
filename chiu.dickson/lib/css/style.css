@@ -618,6 +618,23 @@ input[type="file"]{
     height:100%;
     object-fit:cover;
 }
+
+.filter-search{
+    top:7px;
+    z-index:20;
+    position:relative;
+    display:inline-block;
+    padding: 12px 12px 6px 10px;
+    background: #fff;
+    border: 1px solid #185193;
+    border-radius: 6px;
+}
+
+.search-icon{
+    width:30px;
+}
+
+
 /* DROPDOWNS */
 
 
@@ -637,10 +654,11 @@ input[type="file"]{
 }
 
 .map-filter-select{
-    width:90%;
-    border-radius: 50px;
+    padding: 15px 8px 15px 14px;
+    display:inline-block;
+    width:70%;
     top:20px;
-    margin-left: auto;
+    margin-left: 7%;
     margin-right: auto;
     z-index: 20;
 }
