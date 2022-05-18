@@ -17,8 +17,17 @@ const makeFilterList = async () => {
     $("#map-filter-select").append(makeDogFilterList(animals.result));
 }
 
+const makeExistingFilterList = async () => {
+    let animals = await query({
+        type:'dogs_by_user_id',
+        params:[sessionStorage.userId]
+    })
+    document.getElementById('map-filter-select').innerHTML = "";
+    $("#existing-dog-select").append(makeDogFilterList(animals.result));
+}
+
 const makeDogFilterList = templater(o=>`
-<option value="${o.id}">${o.name}</option>
+<option value="${o.id}">${o.name} &ensp;&#8211;&ensp; ${o.breed}</option>
 ` 
 );
 
