@@ -127,6 +127,9 @@ a:hover {
     background-color: #85111b;
 }
 
+#add-dog-to-list-form{
+    margin-bottom: 45px;   
+}
 
 #error-message{
     font-size: 16px;
@@ -138,7 +141,8 @@ a:hover {
  #change-password-error-message,
  #edit-user-error-message,
  #signup1-error-message,
- #signup2-error-message{
+ #signup2-error-message,
+ #description-error-message{
     font-size: 16px; 
     color:#ff0000;
     font-weight: 600;
