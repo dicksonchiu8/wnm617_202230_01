@@ -1031,13 +1031,25 @@
             <ul>
                 <li><a href="#" data-rel="back">Cancel</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#add-dog-location-page">Next</a></li>
+                <li><a href="#" class="js-add-dog-location">Next</a></li>
             </ul>
         </header>
         <div data-role="main" class="add-location">
-                
-            <input type="hidden" id="location-animal">
-    
+            <input type="hidden" id="location-animal">    
+            <input type="hidden" id="location-start">
+            <div class="form-control">  
+                <h4>Add New Dog to List:</h4>
+                <a href="#add-dog-page" class="form-button">Add New Dog</a>
+            </div>
+            <div class="form-control"> 
+            <h4>Or choose an existing one:</h4>
+                <div class="existing-dog-select">
+                    <div class="select">
+                        <select name="existing-dogs" id="existing-dog-select" data-role="none">
+                        </select>
+                    </div>
+                </div>
+            </div>
             <!--
                 <div class="form-control">  
                     <h2>Add a Location to:</h2>
@@ -1079,7 +1091,7 @@
                 </div>      
         </div>
    </section>
-    <!--END ADD LOCATION DESCRIPTION PAGE-->    
+    <!--END ADD LOCATION DESCRIPTION PAGE-->
 
 </body>
 </html>
