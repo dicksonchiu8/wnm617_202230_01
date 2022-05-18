@@ -3,6 +3,10 @@ const submitAnimalAdd = async () => {
     let breed = $("#dog-breed-select :selected").text();
     let description = $("#dog-description").val();
     let img = $("#add-dog-photo-image").val();
+    
+    if(img === ""){
+        img = "https://via.placeholder.com/400/780/fff/?text=DOG";
+    }
    
    //FORM VALIDATION
     if(name.length < 1 && breed === "Select a dog breed"){
@@ -292,6 +296,10 @@ const signupImage = async () => {
     let description = localStorage.getItem("descValue");
     let img = $("#signup-user-photo-image").val();
     
+    if(img === ""){
+        img = "https://via.placeholder.com/400/780/fff/?text=USER";
+    }
+    
     console.log({email,user,pass,fullname,age,description,img});
         
     let {id,error} = await query({
@@ -309,12 +317,22 @@ const submitLocationAdd = async () => {
     let lat = $("#location-lat").val();
     let lng = $("#location-lng").val();
     let description = $("#location-description").val();
+    console.log(animal,lat,lng,description)
     let {result,error} = await query({
         type: 'insert_location',
         params: [animal, lat, lng, description]
     });    
     
     if(error) throw(error);
-    history.go(-2);
+    history.go(+$("#location-start").val());
     
+}
+
+const submitExistingDog = async () => {
+    let animal = $("#existing-dog-select option:selected").val();
+    $("#location-animal").val(animal);
+    $("#location-start").val("-3");
+    console.log(animal);
+    //console.log($("#location-existing-animal").val());
+    $.mobile.navigate("#add-dog-location-page");
 }
