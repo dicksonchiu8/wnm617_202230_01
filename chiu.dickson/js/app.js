@@ -19,13 +19,12 @@ $(() => {
             case "edit-dog-page": EditDogPage(); break;
             case "add-dog-location-page": AddDogLocation(); break;
             case "map-page": MapPage(); makeFilterList(); addMostRecent(); break;
+            case "add-location-page": makeExistingFilterList(); break;
             case "user-edit-photo-page": UserEditPhotoPage(); break;
             case "animal-edit-photo-page": AnimalEditPhotoPage(); break;            
 
         }
     })
-        
-    
     
     // FORM SUBMISSIONS
     .on("submit", "#login-form", function(e){
@@ -73,10 +72,15 @@ $(() => {
     
     .on("click", ".js-choose-animal-location", function(e){
         $("#location-animal").val(sessionStorage.animalId);
+        console.log($("#location-animal").val());
     })
     
     .on("click", ".js-check-filter", function(e){
         checkFilter();
+    })
+    
+    .on("click", ".js-add-dog-location", function(e){
+        submitExistingDog();
     })
     
    .on("change",".imagepicker input", function(e){
