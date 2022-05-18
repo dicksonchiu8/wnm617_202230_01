@@ -147,9 +147,11 @@ const DogProfilePageRecent = async() => {
     console.log(animal);
     
     $("#dog-profile-page-recent h1").html(animal.name+"'s Profile");
+    document.getElementById('map-filter-select').innerHTML = "";
     //Also call dropdown function in parts.js
     //dogBreedDropdown(animal.breed)
     
+    $("#location-start").val("-2");
    let {result:locations} = await query({
       type:'locations_by_animal_id',
       params:[sessionStorage.animalId]
@@ -224,7 +226,7 @@ const MapPage = async() => {
        if(o.lat && o.lng) r.push(o);
        return r;
     },[]);
-    
+    document.getElementById('existing-dog-select').innerHTML = "";
     
     let map_el = await makeMap("#map-page .map-container");
     console.log(map_el.data())
@@ -326,4 +328,8 @@ const AddDogPage = async () => {
     $("#dog-description").val("");
     let imagePath = "../images/search-icon.png";
     $("#add-dog-photo-image").css("background-image", "url("+ imagePath +") no-repeat");
+}
+
+
+const AddExistingDog = () => {
 }
