@@ -33,7 +33,7 @@ const makeDogFilterList = templater(o=>`
 
 const addMostRecent = () => {
     //$("#map-filter-select").prepend( "<option value='Most Recent' selected>Most Recent</option>" );
-    document.getElementById("map-filter-select").innerHTML += "<option value='Most Recent' selected>Most Recent</option>";
+    document.getElementById("map-filter-select").innerHTML += "<option value='Most Recent' selected>Most Recent - All Dogs</option>";
 }
 
 const makeAnimalPopupBody = o => `
