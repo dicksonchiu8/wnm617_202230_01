@@ -317,14 +317,28 @@ const submitLocationAdd = async () => {
     let lat = $("#location-lat").val();
     let lng = $("#location-lng").val();
     let description = $("#location-description").val();
-    console.log(animal,lat,lng,description)
-    let {result,error} = await query({
-        type: 'insert_location',
-        params: [animal, lat, lng, description]
-    });    
     
-    if(error) throw(error);
-    history.go(+$("#location-start").val());
+    if(description.length < 1){
+        $("#description-error-message").html("Please fill out the Description.");
+        $("#description-error-message").addClass("visible");
+        $("#description-error-message").removeClass("no-display");    
+            
+        // remove error message after some time
+        setTimeout(function() {
+            $("#description-error-message").addClass("no-display");
+            $("#description-error-message").removeClass("visible");
+        }, 4000);                     
+    } else {
+        console.log(animal,lat,lng,description)
+        let {result,error} = await query({
+            type: 'insert_location',
+            params: [animal, lat, lng, description]
+        });    
+        
+        if(error) throw(error);
+        history.go(+$("#location-start").val());        
+    }
+
     
 }
 
