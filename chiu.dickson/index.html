@@ -1037,7 +1037,7 @@
         <div data-role="main" class="add-location">
             <input type="hidden" id="location-animal">    
             <input type="hidden" id="location-start">
-            <div class="form-control">  
+            <div class="form-control" id="add-dog-to-list-form">  
                 <h4>Add New Dog to List:</h4>
                 <a href="#add-dog-page" class="form-button">Add New Dog</a>
             </div>
@@ -1078,7 +1078,7 @@
     <!--ADD LOCATION DESCRIPTION PAGE-->     
     <section data-role="page" id="choose-description-page">
       <header data-role="header">
-         <h1>Describe The Animal</h1>
+         <h1>Description</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
@@ -1086,6 +1086,7 @@
          </ul>
       </header>
       <div data-role="main" style="padding:1em">
+                <div id="description-error-message" class="no-display"></div>
                 <div class="form-control">
                     <textarea name="location-description" placeholder="Describe this location..." cols="40" rows="6" id="location-description" data-role="none" class="form-textarea"></textarea>
                 </div>      
