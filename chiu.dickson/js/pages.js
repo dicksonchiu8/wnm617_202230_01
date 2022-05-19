@@ -203,7 +203,7 @@ const AnimalEditPhotoPage = async () => {
 
 const AddDogLocation = async() => {
     let map_el = await makeMap("#add-dog-location-page .map-container");
-    
+    $("#location-description").val("");
     map_el.data("map").addListener("click", function(e){
         console.log(e)
         $("#location-lat").val(e.latLng.lat())
