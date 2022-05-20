@@ -338,8 +338,55 @@ const submitLocationAdd = async () => {
         if(error) throw(error);
         history.go(+$("#location-start").val());        
     }
+}
 
+
+const submitLocationEdit = async () => {
+    let description = $("#edit-location-description").val();
+    if(description.length < 1){
+        $("#edit-description-error-message").html("Please fill out the Description.");
+        $("#edit-description-error-message").addClass("visible");
+        $("#edit-description-error-message").removeClass("no-display");    
+            
+        // remove error message after some time
+        setTimeout(function() {
+            $("#description-error-message").addClass("no-display");
+            $("#description-error-message").removeClass("visible");
+        }, 4000);                     
+    } else {
+        console.log(description)
+        let {result,error} = await query({
+            type: 'update_location',
+            params: [description, sessionStorage.locationId]
+        });    
+        
+        if(error) throw(error);
+        history.go(-1);        
+    }    
     
+}
+
+const submitMapLocationEdit = async () => {
+    let lat = $("#edit-location-lat").val();
+    let lng = $("#edit-location-lng").val();
+    
+    let {result,error} = await query({
+        type: 'update_map_location',
+        params: [lat, lng, sessionStorage.locationId]
+    });    
+        
+    if(error) throw(error);
+    history.go(-1);     
+    
+}
+
+const submitDeleteLocation = async () => {
+        let {result,error} = await query({
+            type: 'delete_location',
+            params: [sessionStorage.locationId]
+        });
+        if(error) throw(error);
+        $.mobile.navigate("#dog-profile-page-recent");    
 }
 
 const submitExistingDog = async () => {
