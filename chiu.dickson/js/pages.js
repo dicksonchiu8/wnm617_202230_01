@@ -212,6 +212,32 @@ const AddDogLocation = async() => {
     })
 }
 
+const EditDogLocation = async() => {
+    let {result:locations} = await query({
+        type:'location_by_id',
+        params:[sessionStorage.locationId]
+    })
+    
+    let [location] = locations;
+    console.log(location);
+    $("#location-lat").val(location.lat)
+    $("#location-lng").val(location.lng)
+    let coordinates = location.lat+','+location.lng;
+    $("#location-coordinates").val(coordinates)
+    $("#edit-location-description").text(location.description) 
+    
+}
+
+const EditDogMapLocation = async () => {
+    let map_el = await makeMap("#edit-dog-location-page .map-container");
+    map_el.data("map").addListener("click", function(e){
+        console.log(e)
+        $("#edit-location-lat").val(e.latLng.lat())
+        $("#edit-location-lng").val(e.latLng.lng())
+        makeRegularMarkers(map_el,[e.latLng])
+    })    
+}
+
 const MapPage = async() => {
     
     await checkData(()=>window.google);
