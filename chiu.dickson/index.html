@@ -744,6 +744,53 @@
         </div>
    </section>
     <!--END ADD LOCATION DESCRIPTION PAGE-->
+    
+    
+    <!--EDIT LOCATION DESCRIPTION PAGE-->     
+    <section data-role="page" id="edit-location-page">
+      <header data-role="header">
+         <h1>Edit Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-location-edit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" style="padding:1em">
+                <div id="edit-description-error-message" class="no-display"></div>
+                 <div class="form-control">
+                    <label for="location-coordinates"><h5>Coordinates</h5></label>
+                    <input type="text" id="location-coordinates" data-role="none" class="form-input" readonly>
+                    <a href="#edit-dog-location-page" class="form-button">Edit Map Location</a>        
+                </div>
+                <div class="form-control">
+                    <label for="location-coordinates"><h5>Description</h5></label>        
+                    <textarea name="location-description" placeholder="Describe this location..." cols="40" rows="6" id="edit-location-description" data-role="none" class="form-textarea"></textarea>
+                </div>      
+                
+                <div class="form-control">            
+                    <a href="#" class="form-button-delete js-delete-location">Delete Location</a>
+                </div>
+        </div>
+   </section>
+    <!--END ADD LOCATION DESCRIPTION PAGE-->    
+    
+    <!--EDIT DOG LOCATION PAGE-->    
+    <section data-role="page" id="edit-dog-location-page">
+        <header data-role="header">
+            <h1>Pick Dog's Location</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#" class="js-edit-map-location">Save</a></li>
+            </ul>
+        </header>        
+        <input type="hidden" id="edit-location-lat">
+        <input type="hidden" id="edit-location-lng">
+        <div data-role="main" class="map-container">
+        </div>
+    </section>
+    <!--END ADD DOG LOCATION PAGE-->     
 
 </body>
 </html>
