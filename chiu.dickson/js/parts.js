@@ -1,4 +1,4 @@
-const makeAnimalList = templater(o=>`
+ const makeAnimalList = templater(o=>`
 <li class="ui-li-has-thumb ui-first-child">
     <a href="#dog-profile-page-info" class="ui-btn ui-btn-icon-right ui-icon-carat-r js-animal-jump" data-id="${o.id}">
         <img src="${o.img}">
@@ -52,6 +52,7 @@ const makeLocationPopupBody = o => `
    <div class="animal-list-desc">
       <h2>Location Description</h2>
       <div>${o.description}</div>
+      <h5 class="js-location-jump noclick-children" data-id="${o.id}"><strong>Edit Location</strong></h5>
    </div>
 </div>
 `;
