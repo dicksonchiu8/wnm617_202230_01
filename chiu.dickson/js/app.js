@@ -21,7 +21,9 @@ $(() => {
             case "map-page": MapPage(); makeFilterList(); addMostRecent(); break;
             case "add-location-page": makeExistingFilterList(); break;
             case "user-edit-photo-page": UserEditPhotoPage(); break;
-            case "animal-edit-photo-page": AnimalEditPhotoPage(); break;            
+            case "animal-edit-photo-page": AnimalEditPhotoPage(); break;  
+            case "edit-location-page": EditDogLocation(); break;
+            case "edit-dog-location-page": EditDogMapLocation(); break;
 
         }
     })
@@ -65,9 +67,17 @@ $(() => {
     .on("click", ".js-delete-dog", function(){
         submitDeleteDog();
     })
+
+    .on("click", ".js-delete-location", function(){
+        submitDeleteLocation();
+    })    
     
     .on("click", ".js-submit-location-add", function(e){
         submitLocationAdd();
+    })
+    
+    .on("click", ".js-submit-location-edit", function(e){
+        submitLocationEdit();
     })
     
     .on("click", ".js-choose-animal-location", function(e){
@@ -81,6 +91,10 @@ $(() => {
     
     .on("click", ".js-add-dog-location", function(e){
         submitExistingDog();
+    })
+    
+    .on("click", ".js-edit-map-location", function(e){
+        submitMapLocationEdit();
     })
     
    .on("change",".imagepicker input", function(e){
@@ -164,7 +178,16 @@ $(() => {
         } catch(e){
             throw("No id detected")
         }
-   })   
+   }) 
+   
+    .on("click", ".js-location-jump", function() {
+        try{
+            sessionStorage.locationId = $(this).data('id');
+            $.mobile.navigate("#edit-location-page")
+        } catch(e){
+            throw("No id detected")
+        }
+   })    
    
    
    
