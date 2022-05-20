@@ -229,7 +229,32 @@ function makeStatement($data){
             if(isset($r['error'])){
                 return $r;
             }
-            return ["result"=>"Success"];           
+            return ["result"=>"Success"]; 
+            
+        case "update_location":
+            makeQuery($c, "UPDATE
+            `track_202230_locations`
+            SET
+                `description` = ?
+                WHERE `id`= ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return ["result"=>"Success"]; 
+
+        case "update_map_location":
+            makeQuery($c, "UPDATE
+            `track_202230_locations`
+            SET
+                `lat` = ?,
+                `lng` = ?
+                WHERE `id`= ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return ["result"=>"Success"];             
        
        
        /* UPLOAD */
@@ -265,7 +290,17 @@ function makeStatement($data){
             if(isset($r['error'])){
                 return $r;
             }
-            return ["result"=>"Success"];        
+            return ["result"=>"Success"];  
+
+        case "delete_location":
+            makeQuery($c, "DELETE FROM
+            `track_202230_locations`
+                WHERE `id`= ?
+            ",$p, false);
+            if(isset($r['error'])){
+                return $r;
+            }
+            return ["result"=>"Success"];              
        
        
         case "check_signin":
