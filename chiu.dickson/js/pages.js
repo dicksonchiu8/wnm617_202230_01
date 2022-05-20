@@ -323,6 +323,7 @@ const checkFilter = async () => {
 
 
 const AddDogPage = async () => {
+    dogBreedDropdown("add");
     $("#dog-fullname").val("");
     $("#dog-breed-select option:selected").removeAttr("selected");
     $("#dog-description").val("");
