@@ -423,9 +423,12 @@ input[type="file"]{
 }
 
 .edit-image-link{
-    margin-top:5px;
-    text-align:center;
-    color: #185193;
+    position: absolute;
+    right: 100px;
+    top: 190px;
+}
+.edit-image-link img{
+    width:50px;
 }
 
 .profile-info{
