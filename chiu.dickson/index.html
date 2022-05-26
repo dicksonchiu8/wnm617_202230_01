@@ -558,11 +558,11 @@
                 </div>  
                 <p></p>
                 <p></p>
-                <!--
+                
                 <div class="form-control">            
                     <a href="#" class="form-button-delete js-delete-dog">Delete Dog</a>
                 </div>
-                -->
+                
             </form>
         </div>    
 
@@ -764,18 +764,22 @@
       <div data-role="main" class="overscroll" style="padding:1em">
                 <div id="edit-description-error-message" class="no-display"></div>
                  <div class="form-control">
-                    <label for="location-coordinates"><h5>Coordinates</h5></label>
-                    <input type="text" id="location-coordinates" data-role="none" class="form-input" readonly>
-                    <a href="#edit-dog-location-page" class="form-button">Edit Map Location</a>        
+                   <!--<label for="location-marker"><h5>Location</h5></label>
+                     <input type="text" id="location-coordinates" data-role="none" class="form-input" readonly>-->
+                    <div class="map"></div>
+                    <div class="edit-location-button-wrapper">
+                            <a href="#edit-dog-location-page"><img src="lib/images/edit-icon-loc.png"></a>
+                     </div>
+                    <!--<a href="#edit-dog-location-page" class="form-button">Edit Map Location</a>-->
                 </div>
                 <div class="form-control">
                     <label for="location-coordinates"><h5>Description</h5></label>        
                     <textarea name="location-description" placeholder="Describe this location..." cols="40" rows="6" id="edit-location-description" data-role="none" class="form-textarea"></textarea>
                 </div>      
-                <!--
+                
                 <div class="form-control">            
                     <a href="#" class="form-button-delete js-delete-location">Delete Location</a>
-                </div>-->
+                </div>
         </div>
    </section>
     <!--END ADD LOCATION DESCRIPTION PAGE-->    
