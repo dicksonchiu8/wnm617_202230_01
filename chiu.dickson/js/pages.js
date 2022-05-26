@@ -213,6 +213,7 @@ const AddDogLocation = async() => {
 }
 
 const EditDogLocation = async() => {
+    let map_el = await makeMap("#edit-location-page .map");
     let {result:locations} = await query({
         type:'location_by_id',
         params:[sessionStorage.locationId]
@@ -220,6 +221,9 @@ const EditDogLocation = async() => {
     
     let [location] = locations;
     console.log(location);
+    
+    makeMarkers(map_el,locations);
+    
     $("#location-lat").val(location.lat)
     $("#location-lng").val(location.lng)
     let coordinates = location.lat+','+location.lng;
