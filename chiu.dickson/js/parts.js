@@ -1,4 +1,4 @@
- const makeAnimalList = templater(o=>`
+const makeAnimalList = templater(o=>`
 <li class="ui-li-has-thumb ui-first-child">
     <a href="#dog-profile-page-info" class="ui-btn ui-btn-icon-right ui-icon-carat-r js-animal-jump" data-id="${o.id}">
         <img src="${o.img}">
@@ -56,13 +56,17 @@ const makeLocationPopupBody = o => `
    </div>
 </div>
 `;
+
+//<a href="#user-edit-photo-page">Edit Image</a>
 const makeUserProfilePage = o => `
 
                 <div class="form-control user-presentation">
                     <div class="img-container">
                         <img src="${o.img}"/>
+                        <div class="edit-image-link"><a href="#user-edit-photo-page"><img src="lib/images/edit-icon-loc.png"></a></div>
                     </div> 
-                    <div class="edit-image-link"><a href="#user-edit-photo-page">Edit Image</a></div>
+                    
+                    
                     <div class="profile-info">
                      <h4>Name:</h4><span>${o.name}</span><br>
                      <h4>Email:</h4><span>${o.email}</span><br>
@@ -78,8 +82,8 @@ const makeDogProfilePage = o => `
                 <div class="form-control animal-presentation">
                     <div class="img-container">
                         <img src="${o.img}"/>
+                        <div class="edit-image-link"><a href="#animal-edit-photo-page"><img src="lib/images/edit-icon-loc.png"></a></div>
                     </div> 
-                    <div class="edit-image-link"><a href="#animal-edit-photo-page">Edit Image</a></div>
                     <div class="profile-info">                    
                      <h4>Name:</h4><span>${o.name}</span><br>
                      <h4>Breed:</h4><span>${o.breed}</span>
