@@ -323,6 +323,13 @@ input[type=text], input[type=password] {
     height:100%;
 }
 
+#edit-location-page .map{
+    width:100%;
+    height:250px;
+    border: 1px solid #185193;
+    border-radius: 6px;
+}
+
 /*https://stackoverflow.com/questions/46416883/how-add-circle-shape-in-google-maps-custom-icon*/
 img[src$="#custom_marker"]{
     border: 3px solid #185193 !important;
@@ -617,6 +624,17 @@ input[type="file"]{
 .add-location-button-wrapper img{
     float:right;
     width: 60px;
+}
+
+.edit-location-button-wrapper{
+    position:absolute;
+    right:8px;
+    top:250px;
+    width:100%;
+}
+.edit-location-button-wrapper img{
+    float:right;
+    width: 40px;
 }
 
 /*Followed thumbnail example for a listview: https://demos.jquerymobile.com/1.4.3/listview/#&ui-state=dialog*/
